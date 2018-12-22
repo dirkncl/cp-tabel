@@ -1,0 +1,547 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Image</title>
+<style>
+      body{background-color:#FAF0F8}
+      ::-webkit-scrollbar {width: 10px;height: 0px;}
+      ::-webkit-scrollbar-thumb {background-color: rgba(100,170,200, 1);border-radius: 0 1px 1px 0;}
+      ::-webkit-scrollbar-track {background: rgba(117,191,248, 0.5);}    
+</style>
+<script>
+// Pics[0..111][0] -> gambar tersedia  Pics[1..111][1...3][1..3]
+// Pics[0][1][0] = tt_h
+//    [n][0][0] = tt_h
+//    [n][0][1] = 'Hydrogen in a testtube.'
+//    [n][0][2] = 'Gaseous hydrogen is colourless.'
+//    [n][0][3] = 'Fred Bayer'
+
+//    [n][1][0] = pmw_h
+//    [n][1][1] = 'Hydrogen flame'
+//    [n][1][2] = 'Hydrogen burns with little or no flame.'
+//    [n][1][3] = 'Precious Metals West'
+
+//    [n][2][0] = ''
+//    [n][2][1] = ''
+//    [n][2][2] = ''
+//    [n][2][3] = ''
+
+//    [n][3][0] = ''
+//    [n][3][1] = ''
+//    [n][3][2] = ''
+//    [n][3][3] = ''
+
+Pics = [
+/* 0 */ [['tt_H',  'Hydrogen in a testtube.', 'Gaseous hydrogen is colourless.', 'Fred Bayer'], ['pmw_H', 'Hydrogen flame', 'Hydrogen burns with little or no flame.', 'Precious Metals West'], ['', '', '', ''], ['', '', '', '']],
+/* 1 */ [['tt_He', 'Helium in a testtube.', 'Gaseous helium is colourless.', 'Fred Bayer'], ['tt_He2', 'Glowing white Helium', 'Helium glows bright white when a high voltage is applied to it.', 'Fred Bayer'], ['pslawinski_He', 'Helium discharge tube', 'A helium dischage tube.', 'pslawinski'], ['', '', '', '']],
+[['tt_Li', 'Oxidised lithium', 'This specimen of lithium is coated with a dark layer of oxides and nitrides.', 'Fred Bayer'], ['sc_lepidolite', 'Violet lepidolite', 'Lithium is found in trace amounts in the mineral lepidolite.', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Be', 'Beryllium', 'Small pieces of beryllium.', 'Fred Bayer'], ['es_be_sphere', 'Beryllium sphere', 'A 5g bead of 98.5%+ pure beryllium. About 2cm in diameter.', 'Metallium Inc.'], ['', '', '', ''], ['', '', '', '']],
+[['tt_B',  'Crystalline Boron I', 'Crystalline boron. 0.2 g.', ''], ['es_b', 'Crystalline Boron II', '10 grams of crystalline boron in small pieces.', 'Metallium Inc.'], ['', '', '', ''], ['', '', '', '']],
+[['tt_C',  'Graphite', 'One of carbon\'s many allotropes. 0.2g','Fred Bayer'],['tt_C2','Rough diamonds', 'Carbon\'s best known allotrope, diamond. These are rough diamonds from Venezuela. 0.1 g.', 'Fred Bayer'], ['sc_graphite', 'Piece of graphite', 'A large piece of graphite, that easily marks paper (as well as your hands!).', ''], ['', '', '', '']],
+[['tt_N',  'Gaseous Nitrogen', 'Gaseous nitrogen is colourless. Amount; 3 ml.', 'Fred Bayer'], ['ot_liN', 'Liquid Nitrogen', 'A small amount of liquid nitrogen.', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_O',  'Gaseous Oxygen', 'Gaseous oxygen is colourless. Amount; 3 ml.', 'Fred Bayer'], ['wh_lox', 'Liquid Oxygen', 'A small amount of liquid oxygen showing its characteristic light blue colour.', 'William Hilard'], ['', '', '', ''], ['', '', '', '']],
+[['tt_F',  'Fluor-spar', 'Elementary fluorine corrodes glass, therefore in place of it is a very old fluor-spar (calcium fluoride) containing traces of radioactive material is shown here. Elementary fluorine is set free by the decay, which is released when breaking the mineral and is recognizable by its characteristic smell. Amount; 0.4 g fluor-spar, fluorine unknown.', 'Fred Bayer'], ['tt_F2', 'Elementary Fluorine', 'This is real elementary Fluorine, enclosed in quartz glass, which resists corrosion better than ordinary glass. Amount; 2.5 ml.', 'Fred Bayer'], ['sc_fluorite', 'Fluorite crystals', 'Some fluorite fragments, typical of the different pastel shades of fluorite.', ''], ['', '', '', '']],
+[['tt_Ne', 'Gaseous Neon', 'Gaseous neon is colourless. Amount; 3 ml.', 'Fred Bayer'], ['tt_Ne2', 'Gaseous Neon (glowing)', 'Applying high voltage to gaseous Neon makes it glow bright orange-red', 'Fred Bayer'], ['pslawinski_Ne', 'Neon discharge tube', 'A neon dischage tube.', 'pslawinski'], ['', '', '', '']],
+[['tt_Na', 'Shiny Sodium', 'Beautiful luster without oxidized spots. Amount; 0.2 g.', 'Fred Bayer'], ['swn_Na', 'Sodium flame', 'Sodium burns with a beautiful yellow flame.', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Mg', 'Magnesium Ribbon', 'Small pieces of magnesium ribbon. Amount; 0.1 g.', 'Fred Bayer'], ['es_Mg_ingot', 'Solid Magnesium', 'A solid piece of magnesium, 3g, over 2.5cm long. Greater than 99.8% pure.', 'Metallium Inc.'], ['sc_dolomite', 'Dolomite crystals', 'Some crystals of dolomite from the Tri-State mining district near Joplin, Missouri USA. Dolomite is an commercially important source of magnesium.', ''], ['sc_magnesite', 'Magnesite crystals', 'These rhombohedral crystals of magnesite measure about 50mm from left to right.', '']],
+[['tt_Al', 'Aluminium foil', '0.2 of aluminium foil.', 'Fred Bayer'], ['paf_al', 'Aluminium foil magnified', 'A piece of kitchen foil at 60x magnification.', 'P A Frehney'], ['sc_bauxite', 'Bauxite', 'The most important aluminium ore. It was named after the village "Les Baux-de-Provence" in southern France, where it was first discovered in 1821 by geologist Pierre Berthier.', ''], ['', '', '', '']],
+[['tt_Si', 'Pieces of silicon', 'High-purity silicon for the manufacture of silicon chips. Amount; 0.3 g.', 'Fred Bayer'], ['es_si', 'Pieces of silicon', '10 grammes of solid silicon. Greater than 99% pure.', 'Metallium Inc.'], ['', '', '', ''], ['', '', '', '']],
+[['tt_P',  'White Phosphorus', 'A small amount of poisonous white phosphorus stored under water to avoid autoignition.', 'Fred Bayer'], ['es_p_red', 'Red Phosphorus', 'A pile of (harmless) red phosphorus.', 'Metallium Inc.'], ['', '', '', ''], ['', '', '', '']],
+[['tt_S',  'Crystalline Sulfur', 'Crystalline sulfur. Amount; 0.2 g.', 'Fred Bayer'], ['ndgs_S', 'Sulfur', 'Sulfur is a component of many of the complex organic compounds that are found in crude oil. It also occurs as hydrogen sulfide in natural gas. This piece of sulfur came from a natural gas plant near Tioga, North Dakota (USA).', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Cl', 'Gaseous Chlorine', 'Chlorine\'s green - yellow colour can just be seen here.','Fred Bayer'],['','','',''],['','','',''],['','','','']],
+[['tt_Ar', 'Gaseous Argon', 'Gaseous argon is colorless. Amount; 3 ml.', 'Fred Bayer'], ['tt_Ar2', 'Gaseous Argon (glowing)', 'Applying high voltage to gaseous argon causes it to glow.', 'Fred Bayer'], ['pslawinski_Ar', 'Argon discharge tube', 'An argon dischage tube.', 'pslawinski'], ['', '', '', '']],
+[['tt_K',  'Potassium', 'Beautiful luster without oxidized spots. Amount; 0.6 g.', 'Fred Bayer'], ['K_solutions', 'Potassium compounds', 'Some potassium compounds, showing their varying colours in water.', ''], ['sc_sylvite', 'Sylvite crystal', 'A sylvite crystal (potassium chloride in natural mineral form).', ''], ['', '', '', '']],
+[['tt_Ca', 'Lumps of Calcium', 'Some small lumps of calcium. Amount; 0.9 g.', 'Fred Bayer'], ['es_Ca_ingot', 'Calcium Ingot', 'A 10 gramme ingot about 2.5cm square. 99% pure.', 'Metallium Inc.'], ['sc_gypsum', 'Piece of Gypsum', 'A mineral source of calcium, this variety of fibrous gypsum is called satin spar. This specimen is from Verde Valley, Arizona USA.', ''], ['', '', '', '']],
+[['tt_Sc', 'Pieces of Scandium', 'Small pieces of very rare scandium. Amount; 0.1 g.', 'Fred Bayer'], ['es_Sc', 'Dendritic Scandium', 'A piece of pure scandium in dendritic form. 10 grammes in weight and 99.5% pure.', 'Metallium Inc.'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Ti', 'Pieces of Titanium', 'Small pieces of titanium. Amount; 0.3 g.', 'Fred Bayer'], ['sc_rutile', 'Rutile', 'A large piece of rutile, a mineral source of titanium.', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_V',  'Lump of Vanadium', 'A lump of vanadium. Amount; 0.6 g.', 'Fred Bayer'], ['es_Vanadium', 'Vanadium Cube', 'A small cube of pure vanadium. Weighs around 10g.', 'Metallium Inc.'], ['sc_vanadinite', 'Vanadinite crystals', 'Vanadinite is one of the main industrial ores of the metal vanadium and a minor source of lead. This piece is from south west Africa, about 90mm across.', ''], ['', '', '', '']],
+[['tt_Cr', 'Crystalline Chromium', 'Chromium in crystalline form. Amount; 0.2 g.', 'Fred Bayer'], ['es_Cr', 'Chromium Ingot', 'A very shiny ingot of chromium. Weighs 10g, 99%+ pure.', 'Metallium Inc.'], ['sc_chromite', 'Chromite', 'Chromite is the most important mineral source of chrome.', ''], ['', '', '', '']],
+[['tt_Mn', 'Pieces of Manganese', 'Some small pieces of manganese. Amount; 0.8 g.', 'Fred Bayer'], ['sc_psilomeline', 'Psilomelane', 'Psilomelane is one of the most abundant manganese ores.', ''], ['sc_pyrolusite', 'Pyrolusite', 'Pyrolusite is one of the most abundant manganese ores.', ''], ['', '', '', '']],
+[['tt_Fe', 'Pure Iron', 'Pure iron without carbon. Amount; 1.1 g.', 'Fred Bayer'], ['sc_hematite', 'Hematite', 'Hematite is an important iron mineral. The specimen is from the Montreal Mine in Hurley, Michigan USA.', ''], ['sc_magnetite', 'Magnetite', 'Magnetite is an important iron mineral. These octahedral magnetite crystals are from Cerro Huanaquino Potosi, Bolivia.', ''], ['', '', '', '']],
+[['tt_Co', 'Lump of cobalt.', 'A small, 1.0g, lump of cobalt.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Ni', 'Nickel Sheet', 'Pieces of nickel sheet. Amount; 0.3 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Cu', 'Copper Wire', 'A small piece of thick copper wire. Amount; 1.7 g.', 'Fred Bayer'], ['sc_azurite', 'Azurite', 'A mineral source of copper. This azurite rose of intergrown crystals comes from Utah, USA.', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Zn', 'Pieces of Zinc', 'Some small pieces of zinc. Amount; 0.8 g.', 'Fred Bayer'], ['es_Zn', 'Zinc Ingot', 'A 50g cast ingot of 99.9% pure zinc. 36mm in diameter and 8mm thick.', 'Metallium Inc.'], ['sc_zincite', 'Zincite crystals', 'A large piece of zincite, a good source of zinc.', ''], ['', '', '', '']],
+[['es_Ga', 'Gallium Rod', 'A small rod of gallium. Gallium will melt in your hand.', 'Metallium Inc.'], ['tt_Ga', 'Piece of Gallium', 'Gallium melts just over room temperature. Amount; 0.6 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Ge', 'Pieces of Germanium', 'Small pieces of germanium. Amount; 0.3 g.', 'Fred Bayer'], ['es_Ge', 'Germanium piece', 'A shiny piece of germanium chopped from a larger piece. 10g, 2.5cm long and 99.999% pure.', 'Metallium Inc.'], ['', '', '', ''], ['', '', '', '']],
+[['tt_As', 'Grey Arsenic', 'A small piece of grey arsenic. Amount; 0.4 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Se', 'Selenium Shot', 'Many pieces of selenium shot. Amount; 0.7 g.', 'Fred Bayer'], ['es_Se', 'Selenium Ingot', 'Solid selenium ingot weighing around 80g and 7.5cm in diameter. 99.95% pure.', 'Metallium Inc.'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Br', 'Bromine', 'Vapours of the pure bromine fill the entire vial. Amount; 0.2 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Kr', 'Gaseous Krypton', 'Gaseous Krypton is colourless. 3ml.', 'Fred Bayer'], ['tt_Kr2', 'Gaseous Krypton', 'Applying high voltage to gaseous krypton causes it to glow light blue. 3ml.', 'Fred Bayer'], ['pslawinski_Kr', 'Krypton discharge tube', 'A krypton dischage tube.', 'pslawinski'], ['', '', '', '']],
+[['zz_Rb', 'Rubidium Vapour Lamp', 'A rubidium vapour lamp manufactured by Osram.', ''], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['es_Sr', 'Strontium Ingot', 'A 2.5cm square ingot of 98%+ pure strontium. Approx. 20g.', 'Metallium Inc.'], ['tt_Sr', 'Strontium', 'A little bit tarnished (oxidised). Amount; 0.2 g.', 'Fred Bayer'], ['sc_strontianite', 'Strontianite crystal', 'A group of strontianite (white) crystals, an important strontium mineral.', ''], ['', '', '', '']],
+[['es_Y',  'Chunk of Yttrium', 'A 2.5cm square chunk of yttrium cut from a larger piece. 50g in weight, 99% pure.', 'Metallium Inc.'], ['tt_Y', 'Pieces of Yttrium', 'Pieces of yttrium. Amount; 0.4 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Zr', 'Pieces of Zirconium', 'Small pieces of zirconium. Amount; 0.5 g.', 'Fred Bayer'], ['sc_zircon', 'Zircon crystal', 'A small zircon crystal. The oldest minerals found so far are zircons from Western Australia, with an age of 4.404 billion years.', ''], ['', '', '', ''], ['', '', '', '']],
+[['es_Nb', 'Niobium Slug', 'Solid niobium slug weighing 3.5g. 99.95% pure.', 'Metallium Inc.'], ['tt_Nb', 'Pieces of Niobium', 'Small pieces of niobium. Amount; 0.7 g.', 'Fred Bayer'], ['sc_pyrochlore', 'Pyrochlore', 'Pyrochlore is good mineral source of niobium.', ''], ['', '', '', '']],
+[['es_Mo', 'Molybdenum Slug', '99.95% pure molybdenum slug weighing 4 g.', 'Metallium Inc.'], ['tt_Mo', 'Molybdenum ribbon', 'Small molybdenum ribbons. Amount; 0.2 g.', 'Fred Bayer'], ['sc_molybdenite', 'Molybdenite crystals', 'Some rounded molybdenite crystals, a good source of molybdenum.', ''], ['', '', '', '']],
+[['tt_Tc', 'Pitchblende (containing Technetium)', 'Technetium is quite radioactive. Pitchblende (an Uranium ore) is shown here, where spontaneous fission of U-238 creates tiny amounts of Technetium. Amount; 0.2 g Pitchblende, corresponding to 0.1 pg or 600 million atoms of Tc.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Ru', 'Piece of Ruthenium', 'A chequered piece of ruthenium. Amount; 0.3 g.', 'Fred Bayer'], ['es_Ru', 'Ruthenium Pellet', 'A 99.9% pure pellet of solid ruthenium weighing 10g. 14mm in diameter.', 'Metallium Inc.'], ['', '', '', ''], ['', '', '', '']],
+[['es_Rh', 'Rhodium Pellet', 'A 1g pellet of 99.9% pure rhodium, 6mm in diameter.', 'Metallium Inc.'], ['tt_Rh', 'Pieces of Rhodium', 'Rhodium is one of the most expensive precious metals. Amount; 0.4 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Pd', 'Strip of Palladium', 'Small strip of palladium. Amount; 0.3 g.', 'Fred Bayer'], ['es_Pd', 'Palladium Ingot', 'An ingot of pure palladium, 36mm in diameter, 8mm thick.', 'Metallium Inc.'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Ag', 'Silver Beads', 'Many beads of silver. Amount; 1.1 g.', 'Metallium Inc.'], ['ha_siclm', 'Silver Ingot', '99.1% pure silver ingot. Produced around 1863, from the Chico Ledge Mine, Nevada.', 'Heritage Auctions'], ['paf_ag', 'Silver necklace', 'A sterling silver chain at 200x magnification.', 'PA Freshney'], ['', '', '', '']],
+[['tt_Cd', 'Lump of Cadmium', 'A lump of cadmium. Amount; 0.9 g.', 'Fred Bayer'], ['es_Cd', 'Cast Cadmium Ingot', 'A pancake shaped ingot of 99.9%+ pure cadmium. 50g, 36mm in diameter and 8mm thick.', 'Metallium Inc.'], ['', '', '', ''], ['', '', '', '']],
+[['tt_In', 'Indium', 'Small piece of indium. 1.3 g.', 'Fred Bayer'], ['es_In', 'Indium Ingot', 'Solid indium cast ingot. 28g in weight and 31mm in diameter. 99%+ pure.', 'Metallium Inc.'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Sn', 'Beads of tin', 'Beads of tin. Amount; 1.2 g.', 'Fred Bayer'], ['es_snrod', 'Tin rod', 'A rod of solid tin weighing 1 kilogram.', 'Metallium Inc.'], ['sc_cassiterite', 'Cassiterite crystals', 'A group of lustrous cassiterite (tin oxide) crystals.', ''], ['', '', '', '']],
+[['es_Sb', 'Antimony Ingot', 'Cast ingot of 99%+ pure antimony weighing around 40g. 36mm in diameter and 8mm thick.', 'Metallium Inc.'], ['tt_Sb', 'Pieces of Antimony', 'Small pieces of antimony. Amount; 0.8 g.', 'Fred Bayer'], ['sc_stibnite', 'Stibnite crystals', 'A group of stibnite crystals, a source of antimony.', ''], ['', '', '', '']],
+[['es_Te', 'Pieces of Tellurium', 'A beautiful cast piece of pure tellurium showing dazzling crystalline surfaces. 99.9% pure, 30g, 38mm in diameter and 6mm thick.', 'Metallium Inc.'], ['tt_Te', 'Pieces of Tellurium', 'Small pieces of tellurium. Amount; 0.7 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['tt_I',  'Iodine Crystals', 'Iodine in crystal form at room temperature. 0.7g.', 'Fred Bayer'], ['tt_I2', 'Iodine Vapour', 'When heated iodine sublimates (turns from a solid to a gas) into a violet vapour.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Xe', 'Gaseous Xenon', 'Gaseous xenon is colourless. 3ml.', 'Fred Bayer'], ['tt_Xe2', 'Glowing xenon', 'Applying high voltage to xenon causes it to glow dark purple.', 'Fred Bayer'], ['pslawinski_Xe', 'Xenon discharge tube', 'A xenon dischage tube.', 'pslawinski'], ['', '', '', '']],
+[['tt_Cs', 'Small Amount of Cesium', 'Gold-yellow cesium doubly encased in an inner vial. Amount; 50 mg.', 'Fred Bayer'], ['cs_mineral', 'Pollucite', 'Pollucite is one of the main cesium minerals.', ''], ['', '', '', ''], ['', '', '', '']],
+[['es_Ba', 'Barium Ingot', 'An oxidised barium ingot. 98% pure, 20g, 25mm in diameter.', 'Metallium Inc.'], ['tt_Ba', 'Barium', 'A little bit tarnished. Amount; 0.5 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['es_La', 'Lanthanum Ingot', 'A solid ingot of 99% pure lanthanum. 75g and 36mm long.', 'Metallium Inc.'], ['tt_La', 'Piece of Lanthanum', 'The film of lanthanum oxide on the surface makes the metal blue. Amount; 0.4 g', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['es_Ce', 'Cerium Ingot', '99% pure cerium ingot of about 25g and 20mm in length.', 'Metallium Inc.'], ['tt_Ce', 'Piece of Cerium', 'The film of cerium oxide on the surface makes the metal blue. Amount; 0.4 g', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['es_Pr', 'Praseodymium Ingot', 'An ingot of 99% praseodymium. Weighs 50g, about 25mm long.', 'Metallium Inc.'], ['tt_Pr', 'Lump of Praseodymium', 'A lump of Praseodymium. Amount; 0.5 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['es_Nd', 'Neodymium Ingot', 'A 75g ingot of 99% pure neodymium. About 3cm long.', 'Metallium Inc.'], ['tt_Nd', 'A piece of Neodymium', 'A small piece of Neodymium. Amount; 0.3 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Pm', 'Promethium used on a watch hand', 'The luminous paint on the hand contains traces of radioactive promethium.', 'Fred Bayer'], ['tt_Pm2', 'Promethium used on a watch hand (glowing)', 'Using a long exposure time the glowing can be photographed in the dark.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Sm', 'Piece of Samarium', 'A small piece of samarium. Amount; 0.5 g.', 'Fred Bayer'], ['es_Sm', 'Chunk of Samarium', 'A piece of samarium that has been chopped off a larger piece. 5g in weight, 99.5% pure.', 'Metallium Inc.'], ['', '', '', ''], ['', '', '', '']],
+[['es_Eu', 'Europium', 'This piece of europium shows a multitude of colours due to a thin film of oxidation on the surface. 25g, 99.9% pure, about 2.5cm wide.', 'Metallium Inc.'], ['tt_Eu', 'Piece of Europium', 'A small piece of Europium. Amount; 0.6 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['es_Gd', 'Gadolinium Ingot', 'A small ingot of 99% pure gadolinium. Weighs 75g.', 'Metallium Inc.'], ['tt_Gd', 'Gadolinium', 'Gadolinium is the only ferro-magnetic rare earth metal. Amount; 0.4 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['es_Tb', 'Terbium Ingot', 'A 99.5% pure ingot of pure terbium. 25g in weight.', 'Metallium Inc.'], ['tt_Tb', 'Lump of Terbium', 'A lump of Terbium. Amount; 0.5 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['es_Dy', 'Dysprosium Ingot', 'A 75g ingot of 99% pure dysprosium.', 'Metallium Inc.'], ['tt_Dy', 'Piece of Dysprosium', 'A piece of Dysprosium. Amount; 0.2 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['es_Ho', 'Holmium Ingot', 'A 75g chunk of holmium. 99% pure.', 'Metallium Inc.'], ['tt_Ho', 'Holmium powder', 'Holmium powder. Amount; 0.1 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['es_Er', 'Erbium Ingot', 'A 35g ingot of 99.9% pure erbium.', 'Metallium Inc.'], ['tt_Er', 'Swarfs of Erbium', 'A few swarfs of Erbium. Amount; 0.3 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['es_Tm', 'Thulium Chunk', 'A 25g chunk of 99% pure thulium, one of the rarest of rare-earth metals.', 'Metallium Inc.'], ['tt_Tm', 'Thulium Powder', 'Thulium powder. Amount; 0.4 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['es_Yb', 'Ytterbium Ingot', 'A 25g of 99.9% pure ytterbium. Notice that the yellow colour is natural.', 'Metallium Inc.'], ['tt_Yb', 'Swarfs of Ytterbium', 'A few swarfs of Ytterbium. Amount; 0.2 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['es_Lu', 'Lutetium Chunk', '5g chunk of 99.5% pure lutetium. Considered the rarest of the Lanthanide series.', 'Metallium Inc.'], ['tt_Lu', 'Lutetium Powder', 'Lutetium powder. Amount; 0.2 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Hf', 'Swarfs of Hafnium', 'A few swarfs of Hafnium. Amount; 0.5 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['es_Ta', 'Pieces of Tantalum', '100g of 99.95% pure tantalum in a 38mm square block.', 'Metallium Inc.'], ['tt_Ta', 'Pieces of Tantalum', 'Pieces of Tantalum. Amount; 1.2 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['tt_W',  'Lumps of Tungsten', 'Small lumps of tungsten. Amount; 0.9 g.', 'Fred Bayer'], ['sc_scheelite', 'Scheelite crystal', 'A good source of tungsten.', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Re', 'Sheet of Rhenium', 'A piece of rhenium sheet. Amount; 0.2 g.', 'Fred Bayer'], ['es_Re', 'Rhenium Pellet', 'A one gram pellet, 6mm in diameter. The element with the second highest melting point of all elements. 99%+ pure.', 'Metallium Inc.'], ['', '', '', ''], ['', '', '', '']],
+[['es_Os', 'Osmium Pellet', 'A 5g pellet of 99.9% pure osmium, the heaviest metal. 8mm in diameter.', 'Metallium Inc.'], ['tt_Os', 'Osmium Powder', 'Compressed osmium powder. Amount; 0.4 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Ir', 'Iridium', 'Small piece of iridium. Amount; 0.9 g.', 'Fred Bayer'], ['es_Iridium', 'Iridium Rod', 'Large rod of iridium. Making a rod of this size is very difficult due to iridium\'s high melting point, extreme hardness and britleness. 22 Troy ounces.','Metallium Inc.'],['','','',''],['','','','']],
+[['tt_Pt', 'Strip of Platinum.', 'A small strip of Platinum. Amount; 0.1 g', 'Fred Bayer'], ['es_ptrod', 'Solid Platinum Rod', 'A rod of solid platinum weighing 21 troy ounces. At July 2006 prices this rod is worth around US$25,500.', 'Metallium Inc.'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Au', 'Gold sheet', 'A small piece of gold sheet. Amount; 0.5 g.', 'Fred Bayer'], ['ha_gitgm', 'Gold Ingot', 'A solid gold ingot from the Tolkuma Gold Mine, New Guinea.', 'Heritage Auctions'], ['paf_gold', 'Gold ring magnified', '18ct white and yellow gold ring at 150x magnification.', 'P A Freshney'], ['sc_gold', 'Gold crystals', 'Gold in a vein of quartz.', '']],
+[['tt_Hg', 'Liquid Mercury', 'A small amount of toxic mercury. Amount; 5.0 g.', 'Fred Bayer'], ['sc_cinnabar', 'Cinnabar crystals', 'Some hexagonal cinnabar crystals (red). Cinnabar is the most important mercury mineral.', ''], ['', '', '', ''], ['', '', '', '']],
+[['es_Tl', 'Thallium Disc', 'A 10g disk of 99.9% pure thallium. 13mm in diameter and 6mm thick.', 'Metallium Inc.'], ['tt_Tl', 'Thallium Beads', 'Beads of Thallium. Amount; 1.8 g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Pb', 'Piece of Lead', 'A large piece of lead. Amount; 2.2 g.', 'Fred Bayer'], ['es_Pb', 'Lead Ingot', 'A 60g cast ingot of 99.9%+ pure lead, 36mm in diameter and 8mm thick.', 'Metallium Inc.'], ['sc_galena', 'Fluorite crystals', 'The mineral galena (grey) is the main lead mineral.', ''], ['', '', '', '']],
+[['tt_Bi', 'Pieces of Bismuth', 'Bismuth is the last of the stable elements. Amount; 1.2 g.', 'Fred Bayer'], ['es_Bi', 'Cast Ingot', 'A nicely shaped cast ingot of bismuth. 2.5cm wide, approx. 80 grammes. 99%+ pure.', 'Metallium Inc.'], ['sc_bismuth', 'Natural bismuth', 'A piece of naturally occuring metallic bismuth.', ''], ['sc_bismuthsyn', 'Synthetic bismuth', 'A bismuth crystal that has been grown in a bismuth smelter. They tarnished to produced the iridescence on the surface.', '']],
+[['tt_Po', 'Pitchblende (containing Polonium)', 'Po-210 (half life 138 days) is part of the decay chain of U-238, so traces of Polonium exist in the pitchblende shown here. Amount; 0.7 g pitchblende, corresponding to 25 pg or 70 billion atoms of Po-210.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_At', 'Pitchblende (containing Astatine)', 'At-218 (half life 1.6 seconds) is part of the decay chain of U-238, so traces of Astatine exist in the pitchblende shown here. Amount; 0.2 g pitchblende, corresponding to 0.002 ag or 6 atoms of At-218.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Rn', 'Trace amounts of Radon.', 'Rn-220 (half life 56 seconds) is part of the decay chain of Th-232, so traces of Radon are released by the thorium oxide shown here. Amount; 0.9 g Thorium oxide, corresponding to 6 ag or 16000 atoms of Rn-220.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Fr', 'Pitchblende (containing Francium)', 'Fr-223 (half life 22 minutes) is part of the decay chain of U-235, so traces of Francium exist in the pitchblende shown here. Amount; 0.1 g pitchblende, corresponding to 0.36 ag or 950 atoms(!) of Fr-223.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Ra', 'Luminous paint containg Radium salt', 'This luminous paint contains traces of a radium salt. Amount; 50 mg, Radium fraction unknown.', 'Fred Bayer'], ['tt_Ra2', 'Luminous paint containg Radium salt (glowing)', 'With a long exposure time the glowing can be photographed (in the dark).', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Ac', 'Pitchblende (containing Actinium)', 'Ac-227 (half life 21.8 years) is part of the decay chain of U-235, so traces of Actinium exist in the pitchblende shown here. Amount; 0.1 g pitchblende, corresponding to 12 pg or 30 billion atoms of Ac-227.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Th', 'Tungsten impregnated with Thorium', 'A small amount, 0.9g, of tungsten impregnated with thorium, 20mg.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Pa', 'Pitchblende (containing Protactinium)', 'Pa-231 (half life 32700 years) is part of the decay chain of U-235, so traces of Protactinium exist in the pitchblende shown here. Amount; 0.2 g pitchblende, corresponding to 37 ng or 100 trillion atoms of Pa-231.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_U',  'Uranium powder', 'Metallic uranium (U-238) as powder, about 0.1g.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Np', 'Pitchblende (containing Neptunium)', 'Np-237 (half life 2.14 million years) is produced by nuclear reactions in U-238, so traces of Neptunium exist in the pitchblende shown here. Amount; 0.4 g pitchblende, corresponding to 47 fg or 120 million atoms of Np-237.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['doe_Pu', 'Plutonium-238 glowing', 'A small pellet of plutonium glowing under its own light.', ''], ['tt_Pu', 'Small traces in trinitite', 'This is trinitite, a mineral from the area of the first atomic bomb test in New Mexico. The sand was melted by the heat and encloses traces of Plutonium. Amount; trinitite 0.2 g, Plutonium fraction unknown, but very small.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', '']],
+[['tt_Am', 'Small traces in trinitite', 'This is trinitite, a mineral from the area of the first atomic bomb test in New Mexico. The sand was melted by the heat and encloses traces of Americium, created from Plutonium by neutron capture. Amount; trinitite 0.2 g, Americium fraction unknown, but very small.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']],
+[['tt_Cm', 'Small traces in trinitite', 'This is trinitite, a mineral from the area of the first atomic bomb test in New Mexico. The sand was melted by the heat and encloses traces of Curium, created from Plutonium by neutron capture. Amount; trinitite 0.2 g, Curium fraction unknown, but very small.', 'Fred Bayer'], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']]
+];
+
+
+PicJum = [
+'2 ',
+'3 ',
+'2 ',
+'2 ',
+'2 ',
+'3 ',
+'2 ',
+'2 ',
+'3 ',
+'3 ',
+'2 ',
+'4 ',
+'3 ',
+'2 ',
+'2 ',
+'2 ',
+'1 ',
+'3 ',
+'3 ',
+'3 ',
+'2 ',
+'2 ',
+'3 ',
+'3 ',
+'3 ',
+'3 ',
+'1 ',
+'1 ',
+'2 ',
+'3 ',
+'2 ',
+'2 ',
+'1 ',
+'2 ',
+'1 ',
+'3 ',
+'1 ',
+'3 ',
+'2 ',
+'2 ',
+'3 ',
+'3 ',
+'1 ',
+'2 ',
+'2 ',
+'2 ',
+'3 ',
+'2 ',
+'2 ',
+'3 ',
+'3 ',
+'2 ',
+'2 ',
+'3 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'1 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'2 ',
+'4 ',
+'2 ',
+'2 ',
+'3 ',
+'4 ',
+'1 ',
+'1 ',
+'1 ',
+'1 ',
+'2 ',
+'1 ',
+'1 ',
+'1 ',
+'1 ',
+'1 ',
+'2 ',
+'1 ',
+'1 '
+];
+
+</script>
+
+<script language="javascript" type="text/javascript">
+
+
+function moveover(txt)
+{
+   window.status = txt;
+   document.title = txt;
+}
+
+function fillSelectFromArray(selectCtrl, itemArray, goodPrompt, badPrompt, defaultItem)
+{
+   var i, j;
+   var prompt;
+   // empty existing items
+   for (i = selectCtrl.options.length; i >= 0;
+   i -- )
+   {
+      selectCtrl.options[i] = null;
+   }
+   prompt = (itemArray != null) ? goodPrompt : badPrompt;
+   if (prompt == null)
+   {
+      j = 0;
+   }
+   else
+   {
+      selectCtrl.options[0] = new Option(prompt);
+      j = 1;
+   }
+   if (itemArray != null)
+   {
+      // add new items
+      for (i = 0; i < itemArray.length; i ++ )
+      {
+         selectCtrl.options[j] = new Option(itemArray[i][1]);
+         if (itemArray[i][1] != null)
+         {
+            selectCtrl.options[j].value = itemArray[i][2];
+         }
+         j ++ ;
+      }
+      // select first item (prompt) for sub list
+      selectCtrl.options[0].selected = true;
+   }
+}
+
+
+var path = 'media/i/';
+var ext = '.jpg';
+
+var pictures = new Image();
+
+function ShowPic(Images)
+{
+   pictures.src = path + Images + ext;
+   document['ImgHolder'].src = pictures.src;
+}
+
+function PicRunthis(nr)
+{
+   fillSelectFromArray(document.ImageSelect.ImElement, Pics[nr])
+}
+
+function Picrun(nr)
+{
+   var yy;
+   PicRunthis(nr);
+
+   var xx = Pics[nr][0][3];
+   if (xx == '') yy = ''
+   else yy = 'Image Copyright ' + xx;
+   document.getElementById('KetImage').innerHTML = Pics[nr][0][2];
+   document.getElementById('JumImage').innerHTML = PicJum[nr] + ' gambar tersedia';
+   document.getElementById('CopyRgt').innerHTML = yy;
+   ShowPic(Pics[nr][0][0])
+
+}
+
+function Tombolfileopenrun(){
+
+var nr=ElSelect.PicElements.selectedIndex+1;
+top.content.location.href='data/elements/'+nr+'.htm';
+}
+
+
+function Picrunsub(nr)
+{
+   var jumGbr=document.ImageSelect.ImElement.options.length;
+   var num = document.ImageSelect.ImElement.selectedIndex;
+   var yy;
+   var xx = Pics[nr][num][3];
+   if (xx == '')
+   yy = ''
+   else
+   yy = 'Image Copyright ' + xx;
+
+   document.getElementById('KetImage').innerHTML = Pics[nr][num][2];
+   document.getElementById('JumImage').innerHTML = PicJum[nr] + ' gambar tersedia';
+   document.getElementById('CopyRgt').innerHTML = yy;
+
+   ShowPic(Pics[nr][num][0])
+}
+
+//    [n][0][0] = tt_h
+//    [n][0][1] = 'Hydrogen in a testtube.'
+//    [n][0][2] = 'Gaseous hydrogen is colourless.'
+//    [n][0][3] = 'Fred Bayer'
+
+//    [n][1][0] = pmw_h
+//    [n][1][1] = 'Hydrogen flame'
+//    [n][1][2] = 'Hydrogen burns with little or no flame.'
+//    [n][1][3] = 'Precious Metals West'
+
+//    [n][2][0] = ''
+//    [n][2][1] = ''
+//    [n][2][2] = ''
+//    [n][2][3] = ''
+
+//    [n][3][0] = ''
+//    [n][3][1] = ''
+//    [n][3][2] = ''
+//    [n][3][3] = ''
+
+</script>
+
+</head>
+
+<body>
+
+<div style="position: absolute; width: 625px; height: 400px; z-index: 1; left: 22px; top: 0px" id="PictureHolder">
+	<img name='ImgHolder' border="0" src="media/i/tt_H.jpg" width="625" height="400"><hr></div>
+
+
+<div style="position: absolute; width: 150px; height: 99px; z-index: 10; left: 17px; top: 420px" id="PicElement">
+<form method="POST" name='ElSelect'>
+<!--	<select onChange='fillSelectFromArray(document.ImageSelect.ImElement, Pics[this.selectedIndex-1])' size="10" name="PicElements" style="width:150; height:101; font-size:8pt">-->
+	<select onChange='Picrun(this.selectedIndex)' size="10" name="PicElements" style="width:150; height:101; font-size:8pt;background-color:#FAF0F8">-->
+<!--	<option></option>-->
+	<option selected>Hydrogen</option>
+	<option>Helium</option>
+	<option>Lithium</option>
+	<option>Beryllium</option>
+	<option>Boron</option>
+	<option>Carbon</option>
+	<option>Nitrogen</option>
+	<option>Oxygen</option>
+	<option>Flourine</option>
+	<option>Neon</option>
+	<option>Sodium</option>
+	<option>Magnesium</option>
+	<option>Aluminum</option>
+	<option>Silicon</option>
+	<option>Phosphorous</option>
+	<option>Sulfur</option>
+	<option>Chlorine</option>
+	<option>Argon</option>
+	<option>Potassium</option>
+	<option>Calcium</option>
+	<option>Scandium</option>
+	<option>Titanium</option>
+	<option>Vandium</option>
+	<option>Chromium</option>
+	<option>Manganese</option>
+	<option>Iron</option>
+	<option>Cobalt</option>
+	<option>Nickel</option>
+	<option>Copper</option>
+	<option>Zinc</option>
+	<option>Gallium</option>
+	<option>Germanium</option>
+	<option>Arsenic</option>
+	<option>Selenium</option>
+	<option>Bromine</option>
+	<option>Krypton</option>
+	<option>Rubidium</option>
+	<option>Strontium</option>
+	<option>Yttrium</option>
+	<option>Zirconium</option>
+	<option>Niobium</option>
+	<option>Molybdenum</option>
+	<option>Technetium</option>
+	<option>Ruthenium</option>
+	<option>Rhodium</option>
+	<option>Palladium</option>
+	<option>Silver</option>
+	<option>Cadmium</option>
+	<option>Indium</option>
+	<option>Tin</option>
+	<option>Antimony</option>
+	<option>Tellurium</option>
+	<option>Iodine</option>
+	<option>Xenon</option>
+	<option>Cesium</option>
+	<option>Barium</option>
+	<option>Lanthanum</option>
+	<option>Cerium</option>
+	<option>Praseodymium</option>
+	<option>Neodymium</option>
+	<option>Promethium</option>
+	<option>Samarium</option>
+	<option>Europium</option>
+	<option>Gadolinium</option>
+	<option>Terbium</option>
+	<option>Dysprosium</option>
+	<option>Holmium</option>
+	<option>Erbium</option>
+	<option>Thulium</option>
+	<option>Ytterbium</option>
+	<option>Lutetium</option>
+	<option>Hafnium</option>
+	<option>Tantalum</option>
+	<option>Tungsten</option>
+	<option>Rhenium</option>
+	<option>Osmium</option>
+	<option>Iridium</option>
+	<option>Platinum</option>
+	<option>Gold</option>
+	<option>Mercury</option>
+	<option>Thallium</option>
+	<option>Lead</option>
+	<option>Bismuth</option>
+	<option>Polonium</option>
+	<option>Astatine</option>
+	<option>Radon</option>
+	<option>Francium</option>
+	<option>Radium</option>
+	<option>Actinium</option>
+	<option>Thorium</option>
+	<option>Proactinium</option>
+	<option>Uranium</option>
+	<option>Neptunium</option>
+	<option>Plutonium</option>
+	<option>Americium</option>
+	<option>Curium</option>
+	<option>Berkelium</option>
+	<option>Californium</option>
+	<option>Einsteinium</option>
+	<option>Fremium</option>
+	<option>Mendelevium</option>
+	<option>Nobelium</option>
+	<option>Lawrencium</option>
+	<option>Rutherfordium</option>
+	<option>Dubnium</option>
+	<option>Seaborgium</option>
+	<option>Bohriium</option>
+	<option>Hassium</option>
+	<option>Meitnerium</option>
+	<option>Darmstadtium</option>
+	<option>Roentgenium</option>
+	<option>Ununbium</option>
+	<option>Ununtrium</option>
+	<option>Ununquadium</option>
+	<option>Ununpentium</option>
+	<option>Ununhexium</option>
+	<option>Ununseptium</option>
+	<option>Ununoctium</option>
+	</select>
+</form>
+</div>
+
+<div style="position: absolute; width: 151px; height: 70px; z-index: 3; left: 19px; top: 540px" id="ImageElement">
+<form method="POST" name='ImageSelect'>
+	<select size='4' onchange='Picrunsub(ElSelect.PicElements.selectedIndex)'size="10" name="ImElement" style="width:150; height:68; font-size:8pt">
+	  <option></option>
+	</select></form>
+
+</div>
+
+		<div style="position: absolute; width: 394px; height: 82px; z-index: 10; left: 248px; top: 425px" id="Keterangan" align="left">
+			<font face="Arial"><a id='KetImage' align="center" rows="12" cols="35"></a></font></div>
+
+<div style="position: absolute; width: 152px; height: 21px; z-index: 11; left: 18px; top: 525px" id="JumlahImage">
+<font face="Arial" size="1"><a id='JumImage' align="center" rows="12" cols="35"></a></font></div>
+
+<div style="position: absolute; width: 152px; height: 21px; z-index: 11; left: 185px; top: 596px" id="Copyright">
+<font face="Arial" size="1">
+<a id='CopyRgt' align="center" rows="12" cols="35"></a></font></div>
+
+<div style="position: absolute; width: 100px; height: 6px; z-index: 12; left: 19px; top: 410px" id="layer1">
+<font size="1" face="Arial">Images by Element </font>
+</div>
+
+<div style="position: absolute; width: 17px; height: 95px; z-index: 13; left:172px; top:420px" id="layer9">
+
+
+<button name="runfile" style="padding:0; background-color: #E0E0E0; width:23px; height:97px" onclick= 'Tombolfileopenrun()'>
+<p align="right">
+<img border="0" src="data/triplebond.gif" width="9" height="9" align="left">
+</button>
+</div>
+<script>
+///////////
+
+//(function loadFromURL() {
+var imgs = location.search.replace("?", "") || location.hash.replace("#", "");
+if (imgs.indexOf("&")!=-1) {
+    imgs = imgs.split("&");
+    imgs[1]=null;
+    Picrun(imgs[0]);
+    document.ElSelect.PicElements.selectedIndex=imgs[0]-1;
+}
+if (imgs) {
+    Picrun(imgs);
+    document.ElSelect.PicElements.selectedIndex=imgs-1;
+}
+//})();
+
+</script>
+
+</body>
+
+</html>

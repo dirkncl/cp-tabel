@@ -1,0 +1,17 @@
+A.elink:link {color:#006600; text-decoration: none}
+A.elink:visited {color:#006600; text-decoration: none}
+A.elink:hover {color:#FF0000; text-decoration: underline}
+A.elink:active {color:#006600; text-decoration: none}
+A.glink:link {color:#000066; text-decoration: none}
+A.glink:visited {color:#000066; text-decoration: none}
+A.glink:hover {color:#FF0000; text-decoration: underline}
+A.glink:active {color:#000066; text-decoration: none}
+A:link {color:#000000; text-decoration: none}
+A:visited {color:#000000; text-decoration: none}
+A:hover {color:#FF0000; text-decoration: underline}
+A:active {color:#FF000; text-decoration: none}
+.H1 {font-family: Verdana; font-size:10pt; color:#888888; font-weight:bold;}
+.JF {font-family: Verdana; font-size:10pt; color:#000000;}
+.JX {font-family: Verdana; font-size:8pt; color:#666666;}
+.JZ {font-family: Verdana; font-size:7pt; color:#444444;}
+.PF {font-family: Verdana; font-size:8pt; color:#000000;}

@@ -1,0 +1,534 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Maps</title>
+<style>
+body{background-color:#FAF0F8}
+::-webkit-scrollbar {width: 10px;height: 0px;}
+::-webkit-scrollbar-thumb {background-color: rgba(100,170,200, 1);border-radius: 0 1px 1px 0;}
+::-webkit-scrollbar-track {background: rgba(117,191,248, 0.5);}    
+</style>
+<script type=text/javascript>
+function coor() {
+window.status = "X=" + window.event.x + " Y=" +window.event.y;
+}
+
+var path='data/country/';
+
+var MapArr=[                     //MappArr['0]['file,ket]
+['','',''],
+['AF.htm', 'Afghanistan', 'Calcium, Barium'],
+['AL.htm', 'Albania', 'Chromium, Copper'],
+['DZ.htm', 'Algeria', 'Helium, Calcium, Iron, Barium, Gold, Mercury, Lead'],
+['AR.htm', 'Argentina', 'Lithium, Calcium, Iron, Copper, Strontium, Barium, Gold, Lead'],
+['AM.htm', 'Armenia', 'Copper, Gold'],
+['AU.htm', 'Australia', 'Carbon (Diamond), Aluminium, Sulfur, Calcium, Scandium, Titanium, Chromium, Manganese, Iron, Cobalt, Nickel, Copper, Zinc, Zirconium, Silver, Cadmium, Tin, Barium, Tungsten, Gold, Lead, Bismuth, Radium, Thorium, Uranium'],
+['AT.htm', 'Austria', 'Calcium, Iron, Nickel, Copper, Tungsten, Lead'],
+['AZ.htm', 'Azerbaijan', 'Calcium, Iron'],
+['BE.htm', 'Belgium', 'Iron, Copper, Arsenic, Selenium, Tin, Lead'],
+['BT.htm', 'Bhutan', 'Calcium, Iron'],
+['BO.htm', 'Bolivia', 'Lithium, Arsenic, Tin, Antimony, Barium, Tungsten, Gold, Lead, Bismuth'],
+['BA.htm', 'Bosnia and Herzegovina', 'Iron'],
+['BW.htm', 'Botswana', 'Carbon (Diamond), Cobalt, Nickel, Copper, Gold'],
+['BR.htm', 'Brazil', 'Lithium, Beryllium, Carbon (Diamond), Carbon (Graphite), Aluminium, Silicon, Calcium, Titanium, Chromium, Manganese, Iron, Cobalt, Nickel, Copper, Zirconium, Niobium, Cadmium, Tin, Barium, Rare Earths, Tungsten, Gold, Lead, Thorium'],
+['BG.htm', 'Bulgaria', 'Iron, Copper, Cadmium, Barium, Gold, Lead, Bismuth'],
+['BF.htm', 'Burkina Faso', 'Manganese, Gold'],
+['MM.htm', 'Burma (Myanmar)', 'Calcium, Chromium, Iron, Copper, Tin, Barium, Tungsten, Gold, Lead'],
+['BI.htm', 'Burundi', 'Tin, Gold'],
+['CM.htm', 'Cameroon', 'Gold'],
+['CA.htm', 'Canada', 'Lithium, Carbon (Diamond), Carbon (Graphite), Aluminium, Silicon, Sulfur, Potassium, Calcium, Titanium, Iron, Cobalt, Nickel, Copper, Arsenic, Selenium, Niobium, Molybdenum, Rhodium, Palladium, Cadmium, Indium, Tellurium, Caesium, Barium, Tungsten, Osmium, Iridium, Platinum, Gold, Lead, Bismuth, Radium, Thorium, Uranium'],
+['CL.htm', 'Chile', 'Lithium, Sulfur, Calcium, Iron, Copper, Arsenic, Molybdenum, Silver, Iodine, Barium, Rare Earths, Rhenium, Gold, Mercury, Lead'],
+['CN.htm', 'China', 'Lithium, Carbon (Diamond), Carbon (Graphite), Magnesium, Aluminium, Silicon, Sulfur, Calcium, Scandium, Titanium, Vanadium, Chromium, Manganese, Iron, Cobalt, Nickel, Copper, Zinc, Gallium, Germanium, Arsenic, Selenium, Bromine, Strontium, Zirconium, Molybdenum, Silver, Cadmium, Tin, Iodine, Antimony, Barium, Terbium, Dysprosium, Holmium, Thulium, Ytterbium, Tungsten, Gold, Mercury, Lead, Bismuth'],
+['CO.htm', 'Colombia', 'Calcium, Iron, Nickel, Copper, Barium, Osmium, Iridium, Gold, Lead'],
+['CR.htm', 'Costa Rica', 'Gold'],
+['HR.htm', 'Croatia', 'Calcium'],
+['CU.htm', 'Cuba', 'Calcium, Chromium, Iron, Cobalt, Nickel, Gold'],
+['CY.htm', 'Cyprus', 'Calcium, Copper'],
+['CZ.htm', 'Czech Republic', 'Calcium, Iron, Lead, Radium'],
+['KP.htm', 'Democratic Peoples\' Republic of Korea','Sulfur, Calcium, Iron, Copper, Cadmium, Tungsten, Lead'],
+['CD.htm', 'Democratic Republic of Congo', 'Carbon (Diamond), Manganese, Cobalt, Nickel, Copper, Tin, Gold, Radium, Protactinium'],
+['DO.htm', 'Dominican Republic', 'Calcium, Nickel'],
+['EC.htm', 'Ecuador', 'Calcium, Barium, Gold'],
+['EG.htm', 'Egypt', 'Calcium, Titanium, Iron, Copper'],
+['SV.htm', 'El Salvador', 'Calcium'],
+['ER.htm', 'Eritrea', 'Calcium'],
+['EE.htm', 'Estonia', 'Lead'],
+['ET.htm', 'Ethiopia', 'Calcium, Gold'],
+['FJ.htm', 'Fiji', 'Gold'],
+['FI.htm', 'Finland', 'Sulfur, Chromium, Iron, Cobalt, Nickel, Copper, Selenium, Gold, Mercury'],
+['FR.htm', 'France', 'Silicon, Sulfur, Calcium, Iron, Nickel, Arsenic, Bromine, Cadmium, Barium, Lead'],
+['FG.htm', 'French Guiana', 'Gold'],
+['GA.htm', 'Gabon', 'Manganese, Gold'],
+['GM.htm', 'Gambia', 'Zirconium'],
+['GE.htm', 'Georgia', 'Calcium, Copper, Gold'],
+['DE.htm', 'Germany', 'Sulfur, Potassium, Calcium, Iron, Copper, Gallium, Selenium, Bromine, Cadmium, Barium, Lead'],
+['GH.htm', 'Ghana', 'Carbon (Diamond), Aluminium, Manganese, Gold'],
+['GR.htm', 'Greece', 'Calcium, Nickel, Lead'],
+['GL.htm', 'Greenland', 'Gold'],
+['GT.htm', 'Guatemala', 'Calcium, Gold'],
+['GN.htm', 'Guinea', 'Aluminium, Gold'],
+['GY.htm', 'Guyana', 'Gold'],
+['HN.htm', 'Honduras', 'Calcium, Gold, Lead'],
+['HU.htm', 'Hungary', 'Calcium, Iron, Gallium'],
+['IS.htm', 'Iceland', 'Silicon'],
+['IN.htm', 'India', 'Carbon (Diamond), Silicon, Sulfur, Calcium, Titanium, Chromium, Manganese, Iron, Cobalt, Copper, Zinc, Bromine, Zirconium, Cadmium, Barium, Rare Earths, Gold, Lead, Thorium'],
+['ID.htm', 'Indonesia', 'Aluminium, Calcium, Iron, Cobalt, Nickel, Copper, Zirconium, Tin, Iodine, Gold, Lead'],
+['IR.htm', 'Iran', 'Sulfur, Calcium, Chromium, Iron, Copper, Arsenic, Barium, Gold, Lead'],
+['IE.htm', 'Ireland', 'Calcium, Zinc, Lead'],
+['IL.htm', 'Israel', 'Calcium, Bromine, Lead'],
+['IT.htm', 'Italy', 'Sulfur, Calcium, Iron, Copper, Bromine, Barium, Lead'],
+['CI.htm', 'Ivory Coast', 'Gold'],
+['JM.htm', 'Jamaica', 'Aluminium, Calcium'],
+['JP.htm', 'Japan', 'Sulfur, Iron, Cobalt, Nickel, Copper, Gallium, Germanium, Arsenic, Selenium, Bromine, Cadmium, Tellurium, Iodine, Gold, Lead'],
+['JO.htm', 'Jordan', 'Calcium, Bromine'],
+['KZ.htm', 'Kazakhstan', 'Silicon, Sulfur, Scandium, Vanadium, Chromium, Iron, Copper, Zinc, Gallium, Arsenic, Selenium, Cadmium, Barium, Gold, Lead, Uranium'],
+['KE.htm', 'Kenya', 'Calcium, Gold, Lead'],
+['KW.htm', 'Kuwait', 'Sulfur'],
+['KG.htm', 'Kyrgyzstan', 'Calcium, Tungsten, Gold, Mercury'],
+['LA.htm', 'Laos', 'Calcium, Copper, Tin, Barium, Gold'],
+['LV.htm', 'Latvia', 'Calcium'],
+['LY.htm', 'Libya', 'Calcium, Iron'],
+['MK.htm', 'Macedonia', 'Calcium, Copper, Lead'],
+['MG.htm', 'Madagascar', 'Beryllium, Carbon (Graphite), Scandium, Chromium'],
+['MY.htm', 'Malaysia', 'Titanium, Iron, Zirconium, Tin, Barium, Rare Earths, Gold, Lead, Thorium'],
+['ML.htm', 'Mali', 'Gold'],
+['MR.htm', 'Mauritania', 'Calcium, Iron, Copper'],
+['MX.htm', 'Mexico', 'Carbon (Graphite), Sulfur, Calcium, Manganese, Iron, Copper, Zinc, Arsenic, Strontium, Silver, Cadmium, Barium, Gold, Mercury, Lead, Bismuth'],
+['MD.htm', 'Moldova', 'Calcium'],
+['MN.htm', 'Mongolia', 'Calcium, Copper, Tungsten, Gold'],
+['MA.htm', 'Morocco', 'Calcium, Cobalt, Copper, Arsenic, Strontium, Barium, Gold, Mercury, Lead'],
+['MZ.htm', 'Mozambique', 'Beryllium'],
+['NA.htm', 'Namibia', 'Carbon (Diamond), Calcium, Copper, Zinc, Gold, Lead, Uranium'],
+['NL.htm', 'Netherlands', 'Sulfur, Iron, Cadmium, Lead'],
+['NC.htm', 'New Caledonia', 'Cobalt, Nickel'],
+['NZ.htm', 'New Zealand', 'Iron, Gold, Lead'],
+['NI.htm', 'Nicaragua', 'Calcium, Gold'],
+['NE.htm', 'Niger', 'Calcium, Gold, Uranium'],
+['NG.htm', 'Nigeria', 'Iron, Tin, Barium, Lead'],
+['NO.htm', 'Norway', 'Silicon, Scandium, Titanium, Iron, Cobalt, Nickel, Copper, Molybdenum, Cadmium, Thorium'],
+['OM.htm', 'Oman', 'Calcium, Chromium, Copper'],
+['PK.htm', 'Pakistan', 'Calcium, Chromium, Iron, Copper, Strontium, Barium, Lead'],
+['PG.htm', 'Papua New Guinea', 'Copper, Gold'],
+['PY.htm', 'Paraguay', 'Calcium, Iron'],
+['PE.htm', 'Peru', 'Calcium, Iron, Copper, Zinc, Arsenic, Selenium, Silver, Cadmium, Tin, Tellurium, Barium, Gold, Mercury, Lead, Bismuth'],
+['PH.htm', 'Philippines', 'Nickel, Chromium, Copper, Selenium, Gold, Lead'],
+['PL.htm', 'Poland', 'Sulfur, Calcium, Iron, Copper, Selenium, Silver, Barium, Gold, Lead'],
+['PT.htm', 'Portugal', 'Calcium, Copper, Arsenic, Tin, Tungsten, Lead'],
+['QA.htm', 'Qatar', 'Helium, Iron'],
+['KR.htm', 'Republic of Korea', 'Titanium, Iron, Copper, Cadmium, Lead'],
+['RO.htm', 'Romania', 'Calcium, Iron, Copper, Gold, Lead, Bismuth'],
+['RU.htm', 'Russia', 'Helium, Lithium, Carbon (Diamond), Aluminium, Silicon, Sulfur, Calcium, Scandium, Vanadium, Chromium, Iron, Cobalt, Nickel, Copper, Arsenic, Selenium, Bromine, Zirconium, Rhodium, Palladium, Silver, Cadmium, Tin, Iodine, Antimony, Barium, Tungsten, Rhenium, Osmium, Iridium, Platinum, Gold, Mercury, Lead, Bismuth, Polonium, Uranium'],
+['RW.htm', 'Rwanda', 'Tin, Tungsten'],
+['SA.htm', 'Saudi Arabia', 'Sulfur, Calcium, Iron, Copper, Barium, Gold, Lead'],
+['SN.htm', 'Senegal', 'Gold'],
+['RS.htm', 'Serbia', 'Calcium, Iron, Copper, Lead'],
+['SL.htm', 'Sierra Leone', 'Titanium'],
+['SK.htm', 'Slovakia', 'Calcium, Iron, Gallium, Barium, Gold'],
+['SI.htm', 'Slovenia', 'Lead'],
+['SO.htm', 'Somalia', 'Calcium'],
+['ZA.htm', 'South Africa', 'Carbon (Diamond), Silicon, Sulfur, Calcium, Titanium, Vanadium, Chromium, Manganese, Iron, Cobalt, Nickel, Copper, Zirconium, Rhodium, Palladium, Antimony, Osmium, Iridium, Platinum, Gold, Lead, Thorium'],
+['ES.htm', 'Spain', 'Silicon, Sulfur, Nickel, Calcium, Iron, Copper, Bromine, Strontium, Barium, Gold, Mercury, Lead'],
+['LK.htm', 'Sri Lanka', 'Carbon (Graphite), Titanium, Zirconium'],
+['SD.htm', 'Sudan', 'Calcium, Chromium, Gold'],
+['SR.htm', 'Suriname', 'Gold'],
+['SE.htm', 'Sweden', 'Iron, Copper, Zinc, Selenium, Gold, Lead'],
+['CH.htm', 'Switzerland', 'Calcium, Iron, Lead'],
+['SY.htm', 'Syria', 'Calcium'],
+['TW.htm', 'Taiwan', 'Iron, Lead'],
+['TJ.htm', 'Tajikistan', 'Antimony, Gold, Mercury'],
+['TZ.htm', 'Tanzania', 'Calcium, Copper, Gold'],
+['TH.htm', 'Thailand', 'Calcium, Iron, Copper, Tin, Barium, Tungsten, Gold, Lead'],
+['TT.htm', 'Trinidad and Tobago', 'Lead'],
+['TN.htm', 'Tunisia', 'Calcium, Iron, Lead'],
+['TR.htm', 'Turkey', 'Boron, Calcium, Chromium, Iron, Nickel, Copper, Strontium, Barium, Gold, Lead'],
+['TM.htm', 'Turkmenistan', 'Iodine'],
+['UG.htm', 'Uganda', 'Beryllium, Cobalt, Tungsten, Gold'],
+['UA.htm', 'Ukraine', 'Silicon, Calcium, Scandium, Titanium, Manganese, Iron, Nickel, Copper, Gallium, Bromine, Zirconium, Lead'],
+['AE.htm', 'United Arab Emirates', 'Sulfur, Lead'],
+['GB.htm', 'United Kingdom', 'Carbon (Graphite), Calcium, Iron, Nickel, Gallium, Bromine, Tin, Barium, Europium, Lead, Protactinium'],
+['US.htm', 'United States of America', 'Helium, Lithium, Beryllium, Boron, Carbon (Diamond), Magnesium, Silicon, Sulfur, Potassium, Calcium, Titanium, Iron, Copper, Zinc, Gallium, Germanium, Bromine, Molybdenum, Rhodium, Zirconium, Palladium, Cadmium, Tellurium, Iodine, Barium, Iridium, Platinum, Gold, Mercury, Lead, Radium, Thorium, Uranium'],
+['UY.htm', 'Uruguay', 'Gold'],
+['UZ.htm', 'Uzbekistan', 'Sulfur, Calcium, Copper, Selenium, Iodine, Tungsten, Gold, Uranium'],
+['VE.htm', 'Venezuela', 'Silicon, Sulfur, Calcium, Iron, Nickel, Gold, Lead'],
+['VN.htm', 'Vietnam', 'Calcium, Titanium, Chromium, Iron, Copper, Zirconium, Tin, Barium, Gold, Lead'],
+['ZM.htm', 'Zambia', 'Beryllium, Cobalt, Copper, Selenium, Gold'],
+['ZW.htm', 'Zimbabwe', 'Chromium, Iron, Cobalt, Nickel, Copper, Palladium, Platinum, Gold'],
+['XX.htm', 'Outer space', 'Hydrogen, Helium, Beryllium, Carbon, Nitrogen, Oxygen, Neon, Sodium, Magnesium, Aluminium, Silicon, Sulphur, Argon, Calcium, Titanium, Iron, Nickel, Yttrium, Zirconium, Technetium, Xenon, Promethium, Europium, Iridium, Platinum'],
+['ZZ.htm', 'Oceans / Seas', 'Sodium, Chlorine, Potassium, Manganese, Iodine, Gold']
+];
+/////////////////////////////////////////////////////////////
+function numMap(name){
+switch (name) {
+   case '' : return 0;break;                      
+   case 'Afghanistan' : return 1;break;                      
+   case 'Albania' : return 2;break;                      
+   case 'Algeria' : return 3;break;                      
+   case 'Argentina' : return 4;break;                      
+   case 'Armenia' : return 5;break;                      
+   case 'Australia' : return 6;break;                      
+   case 'Austria' : return 7;break;                      
+   case 'Azerbaijan' : return 8;break;                      
+   case 'Belgium' : return 9;break;                      
+   case 'Bhutan' : return 10;break;                     
+   case 'Bolivia' : return 11;break;                     
+   case 'Bosnia and Herzegovina' : return 12;break;                     
+   case 'Botswana' : return 13;break;                     
+   case 'Brazil' : return 14;break;                     
+   case 'Bulgaria' : return 15;break;                     
+   case 'Burkina Faso' : return 16;break;                     
+   case 'Burma (Myanmar)' : return 17;break;                     
+   case 'Burundi' : return 18;break;                     
+   case 'Cameroon' : return 19;break;                     
+   case 'Canada' : return 20;break;                     
+   case 'Chile' : return 21;break;                     
+   case 'China' : return 22;break;                     
+   case 'Colombia' : return 23;break;                     
+   case 'Costa Rica' : return 24;break;                     
+   case 'Croatia' : return 25;break;                     
+   case 'Cuba' : return 26;break;                     
+   case 'Cyprus' : return 27;break;                     
+   case 'Czech Republic' : return 28;break;                     
+   case 'Democratic Peoples\' Republic of Korea' : return 29;break;                     
+   case 'Democratic Republic of Congo' : return 30;break;                     
+   case 'Dominican Republic' : return 31;break;                     
+   case 'Ecuador' : return 32;break;                     
+   case 'Egypt' : return 33;break;                     
+   case 'El Salvador' : return 34;break;                     
+   case 'Eritrea' : return 35;break;                     
+   case 'Estonia' : return 36;break;                     
+   case 'Ethiopia' : return 37;break;                     
+   case 'Fiji' : return 38;break;                     
+   case 'Finland' : return 39;break;                     
+   case 'France' : return 40;break;                     
+   case 'French Guiana' : return 41;break;                     
+   case 'Gabon' : return 42;break;                     
+   case 'Gambia' : return 43;break;                     
+   case 'Georgia' : return 44;break;                     
+   case 'Germany' : return 45;break;                     
+   case 'Ghana' : return 46;break;                     
+   case 'Greece' : return 47;break;                     
+   case 'Greenland' : return 48;break;                     
+   case 'Guatemala' : return 49;break;                     
+   case 'Guinea' : return 50;break;                     
+   case 'Guyana' : return 51;break;                     
+   case 'Honduras' : return 52;break;                     
+   case 'Hungary' : return 53;break;                     
+   case 'Iceland' : return 54;break;                     
+   case 'India' : return 55;break;                     
+   case 'Indonesia' : return 56;break;                     
+   case 'Iran' : return 57;break;                     
+   case 'Ireland' : return 58;break;                     
+   case 'Israel' : return 59;break;                     
+   case 'Italy' : return 60;break;                     
+   case 'Ivory Coast' : return 61;break;                     
+   case 'Jamaica' : return 62;break;                     
+   case 'Japan' : return 63;break;                     
+   case 'Jordan' : return 64;break;                     
+   case 'Kazakhstan' : return 65;break;                     
+   case 'Kenya' : return 66;break;                     
+   case 'Kuwait' : return 67;break;                     
+   case 'Kyrgyzstan' : return 68;break;                     
+   case 'Laos' : return 69;break;                     
+   case 'Latvia' : return 70;break;                     
+   case 'Libya' : return 71;break;                     
+   case 'Macedonia' : return 72;break;                     
+   case 'Madagascar' : return 73;break;                     
+   case 'Malaysia' : return 74;break;                     
+   case 'Mali' : return 75;break;                     
+   case 'Mauritania' : return 76;break;                     
+   case 'Mexico' : return 77;break;                     
+   case 'Moldova' : return 78;break;                     
+   case 'Mongolia' : return 79;break;                     
+   case 'Morocco' : return 80;break;                     
+   case 'Mozambique' : return 81;break;                     
+   case 'Namibia' : return 82;break;                     
+   case 'Netherlands' : return 83;break;                     
+   case 'New Caledonia' : return 84;break;                     
+   case 'New Zealand' : return 85;break;                     
+   case 'Nicaragua' : return 86;break;                     
+   case 'Niger' : return 87;break;                     
+   case 'Nigeria' : return 88;break;                     
+   case 'Norway' : return 89;break;                     
+   case 'Oman' : return 90;break;                     
+   case 'Pakistan' : return 91;break;                     
+   case 'Papua New Guinea' : return 92;break;                     
+   case 'Paraguay' : return 93;break;                     
+   case 'Peru' : return 94;break;                     
+   case 'Philippines' : return 95;break;                     
+   case 'Poland' : return 96;break;                     
+   case 'Portugal' : return 97;break;                     
+   case 'Qatar' : return 98;break;                     
+   case 'Republic of Korea' : return 99;break;                     
+   case 'Romania' : return 100;break;                    
+   case 'Russia' : return 101;break;                    
+   case 'Rwanda' : return 102;break;                    
+   case 'Saudi Arabia' : return 103;break;                    
+   case 'Senegal' : return 104;break;                    
+   case 'Serbia' : return 105;break;                    
+   case 'Sierra Leone' : return 106;break;                    
+   case 'Slovakia' : return 107;break;                    
+   case 'Slovenia' : return 108;break;                    
+   case 'Somalia' : return 109;break;                    
+   case 'South Africa' : return 110;break;                    
+   case 'Spain' : return 111;break;                    
+   case 'Sri Lanka' : return 112;break;                    
+   case 'Sudan' : return 113;break;                    
+   case 'Suriname' : return 114;break;                    
+   case 'Sweden' : return 115;break;                    
+   case 'Switzerland' : return 116;break;                    
+   case 'Syria' : return 117;break;                    
+   case 'Taiwan' : return 118;break;                    
+   case 'Tajikistan' : return 119;break;                    
+   case 'Tanzania' : return 120;break;                    
+   case 'Thailand' : return 121;break;                    
+   case 'Trinidad and Tobago' : return 122;break;                    
+   case 'Tunisia' : return 123;break;                    
+   case 'Turkey' : return 124;break;                    
+   case 'Turkmenistan' : return 125;break;                    
+   case 'Uganda' : return 126;break;                    
+   case 'Ukraine' : return 127;break;                    
+   case 'United Arab Emirates' : return 128;break;                    
+   case 'United Kingdom' : return 129;break;                    
+   case 'United States of America' : return 130;break;                    
+   case 'Uruguay' : return 131;break;                    
+   case 'Uzbekistan' : return 132;break;                    
+   case 'Venezuela' : return 133;break;                    
+   case 'Vietnam' : return 134;break;                    
+   case 'Zambia' : return 135;break;                    
+   case 'Zimbabwe' : return 136;break;                    
+   case 'Outer space' : return 137;break;
+   case 'Oceans / Seas': return 138;break;
+   default : return 1
+} 
+}
+/////////////////////////////////////////////////////////////
+var Ngen;
+function RunthisMap(nr){
+     fillitin(MapArr[nr][0],MapArr[nr][1],MapArr[nr][2])
+}
+
+  
+
+function focunum(name){
+    moveover(name);
+    display(MapArr[numMap(name)][1],MapArr[numMap(name)][2])
+    fr.countrylist.selectedIndex=numMap(name);
+    fr.countrylist.doScroll()    
+}
+
+function ClickMap(MapName){
+    focunum(MapName);
+    runmap(numMap(MapName));
+
+}
+
+
+function moveover(txt){
+   window.status = txt;
+   document.title = txt;
+}
+
+function display(MapName, Ket)
+{
+    moveover(MapName);
+    document.getElementById('Mapdesc').innerHTML=Ket;
+}
+
+ 
+
+function fillitin(MapFile, MapName, Ket)
+{
+   moveover(MapName);
+    document.getElementById('Mapdesc').innerHTML=Ket;
+    top.content.location.href=path+MapFile;
+}
+
+
+function runmap(nr){
+     RunthisMap(nr);
+}
+
+</script>
+
+</head>
+
+<body>
+<div style="border:1px solid #C0C0C0; position: absolute; width: 666px; height: 100px; z-index: 1; left: 12px; top: 0px" id="layer1"><img  onMouseOver='coor()' src="data/system/map.jpg" width="630" height="398" border="0" usemap="#World">
+  <map id="world" name="World">
+    <area shape="poly" coords="581,357,581,356" href="#">
+    <area onClick='ClickMap("Australia")'     onMouseOver='focunum("Australia")'shape="poly" coords="592,342,582,354,574,359,563,354,565,344,560,347,564,339,557,344,556,337,543,336,534,340,524,340,519,342,516,338,519,335,521,328,521,323,520,314,524,301,539,295,543,295,556,280,563,281,570,271,580,274,576,282,585,290,591,270,594,282,596,282,596,297,600,300,601,306,603,319,601,330,600,334" alt="Austarlia">
+    <area onClick='ClickMap("Australia")'     onMouseOver='focunum("Australia")' shape="poly" coords="565,374,570,371,570,366,566,364,564,368,564,372"  alt="Austarlia">
+    <area onClick='ClickMap("New Zealand")'   onMouseOver='focunum("New Zealand")'shape="poly" coords="593,388,593,385,601,379,604,379,612,371,614,374,610,380,610,382,605,383,599,387" alt="New Zealand">
+    <area onClick='ClickMap("New Zealand")'   onMouseOver='focunum("New Zealand")' shape="poly" coords="626,351,627,356,628,361,628,364,628,367,625,369,621,372,617,375,618,369,620,364,622,359,623,357" href="#" alt="New Zealand">
+    <area onClick='ClickMap("New Caledonia")' onMouseOver='focunum("New Caledonia")' shape="poly" coords="618,305,618,308,618,312,620,316,622,315,622,311,621,308,620,307" href="#" alt="New Caledonia">
+    <area onClick='ClickMap("Indonesia")' onMouseOver='focunum("Indonesia")'shape="poly" coords="538,224,540,227,540,231,538,238,536,243,533,248,527,247,522,243,520,237,518,232,523,232,527,232,532,231,535,227" href="#" alt="Indonesia">
+    <area onClick='ClickMap("Indonesia")' onMouseOver='focunum("Indonesia")'shape="poly" coords="488,221,493,226,494,229,495,229,498,235,502,241,502,245,507,250,511,253,513,246,509,240,505,234,501,229,497,226,495,222,491,221" href="#" alt="Indonesia">
+    <area onClick='ClickMap("Indonesia")' onMouseOver='focunum("Indonesia")'shape="poly" coords="510,256,511,253,514,253,516,254,519,255,520,255,524,255,528,257,531,259,527,261,523,259,518,259,514,258" href="#">
+    <area onClick='ClickMap("Indonesia")' onMouseOver='focunum("Indonesia")'shape="poly" coords="537,260,548,260,545,263,543,267,540,263,540,261" href="#" alt="Indonesia">
+    <area onClick='ClickMap("Indonesia")' onMouseOver='focunum("Indonesia")'shape="poly" coords="554,263,555,265,558,264,559,262,555,262" href="#" alt="Indonesia">
+    <area onClick='ClickMap("Indonesia")' onMouseOver='focunum("Indonesia")'shape="poly" coords="555,229,554,231,551,231,547,231,545,234,545,237,543,240,543,247,543,250,545,254,546,249,547,249,549,249,552,245,550,241,550,237,551,233,555,232" href="#" alt="Indonesia">
+    <area onClick='ClickMap("Indonesia")' onMouseOver='focunum("Indonesia")'shape="poly" coords="562,228,562,231,562,234,563,235,563,240,564,238,565,235,563,232,562,230" href="#" alt="Indonesia">
+    <area onClick='ClickMap("Indonesia")' onMouseOver='focunum("Indonesia")'shape="poly" coords="558,246,560,245,562,245,565,245,568,247,565,248,561,247" href="#" alt="Indonesia">
+    <area onClick='ClickMap("Indonesia")' onMouseOver='focunum("Indonesia")'shape="poly" coords="591,243,589,262,586,261,586,258,585,258,585,252,581,251,576,247,574,248,573,244,571,242,571,238,573,237,577,238,576,242,578,244,579,246,581,245,583,242,586,241,587,243,590,244" href="#" alt="Indonesia">
+    <!-- discontinue ???--> 
+  </map>
+</div>
+
+
+<div style="border:1px solid #C0C0C0; position: absolute; width: 666px; height: 230px; z-index: 1; left: 12px; top: 408px; padding-left:4px; padding-right:4px; padding-top:1px; padding-bottom:1px" id="layer2">
+<div style="position: absolute; width: 656px; height: 170px; z-index: 10; left: 1px; top: 54px" id="KetMap"><span style='font-size:120%'id='Mapdesc' align="center"></span></div>
+
+
+
+<div style="position: absolute; width: 319px; height: 54px; z-index: 2; left: -1px; top: -2px" id="MapSelect">
+<SPAN id="PlaceFinder" style="position:absolute; top:10px; left:5px; width:211px; height:41px; z-index:1">
+<form  id='fr' method="POST">
+<p><select size="1" id="countrylist" name="countrylist" onchange='runmap(this.selectedIndex)'>
+    <option>--------------------Pilih--------------------</option>
+     <option selected>Afghanistan</option>
+     <option>Albania</option>
+     <option>Algeria</option>
+     <option>Argentina</option>
+     <option>Armenia</option>
+     <option>Australia</option>
+     <option>Austria</option>
+     <option>Azerbaijan</option>
+     <option>Belgium</option>
+     <option>Bhutan</option>
+     <option>Bolivia</option>
+     <option>Bosnia and Herzegovina</option>
+     <option>Botswana</option>
+     <option>Brazil</option>
+     <option>Bulgaria</option>
+     <option>Burkina Faso</option>
+     <option>Burma (Myanmar)</option>
+     <option>Burundi</option>
+     <option>Cameroon</option>
+     <option>Canada</option>
+     <option>Chile</option>
+     <option>China</option>
+     <option>Colombia</option>
+     <option>Costa Rica</option>
+     <option>Croatia</option>
+     <option>Cuba</option>
+     <option>Cyprus</option>
+     <option>Czech Republic</option>
+     <option>Democratic Peoples' Republic of Korea</option>
+     <option>Democratic Republic of Congo</option>
+     <option>Dominican Republic</option>
+     <option>Ecuador</option>
+     <option>Egypt</option>
+     <option>El Salvador</option>
+     <option>Eritrea</option>
+     <option>Estonia</option>
+     <option>Ethiopia</option>
+     <option>Fiji</option>
+     <option>Finland</option>
+     <option>France</option>
+     <option>French Guiana</option>
+     <option>Gabon</option>
+     <option>Gambia</option>
+     <option>Georgia</option>
+     <option>Germany</option>
+     <option>Ghana</option>
+     <option>Greece</option>
+     <option>Greenland</option>
+     <option>Guatemala</option>
+     <option>Guinea</option>
+     <option>Guyana</option>
+     <option>Honduras</option>
+     <option>Hungary</option>
+     <option>Iceland</option>
+     <option>India</option>
+     <option>Indonesia</option>
+     <option>Iran</option>
+     <option>Ireland</option>
+     <option>Israel</option>
+     <option>Italy</option>
+     <option>Ivory Coast</option>
+     <option>Jamaica</option>
+     <option>Japan</option>
+     <option>Jordan</option>
+     <option>Kazakhstan</option>
+     <option>Kenya</option>
+     <option>Kuwait</option>
+     <option>Kyrgyzstan</option>
+     <option>Laos</option>
+     <option>Latvia</option>
+     <option>Libya</option>
+     <option>Macedonia</option>
+     <option>Madagascar</option>
+     <option>Malaysia</option>
+     <option>Mali</option>
+     <option>Mauritania</option>
+     <option>Mexico</option>
+     <option>Moldova</option>
+     <option>Mongolia</option>
+     <option>Morocco</option>
+     <option>Mozambique</option>
+     <option>Namibia</option>
+     <option>Netherlands</option>
+     <option>New Caledonia</option>
+     <option>New Zealand</option>
+     <option>Nicaragua</option>
+     <option>Niger</option>
+     <option>Nigeria</option>
+     <option>Norway</option>
+     <option>Oman</option>
+     <option>Pakistan</option>
+     <option>Papua New Guinea</option>
+     <option>Paraguay</option>
+     <option>Peru</option>
+     <option>Philippines</option>
+     <option>Poland</option>
+     <option>Portugal</option>
+     <option>Qatar</option>
+     <option>Republic of Korea</option>
+     <option>Romania</option>
+     <option>Russia</option>
+     <option>Rwanda</option>
+     <option>Saudi Arabia</option>
+     <option>Senegal</option>
+     <option>Serbia</option>
+     <option>Sierra Leone</option>
+     <option>Slovakia</option>
+     <option>Slovenia</option>
+     <option>Somalia</option>
+     <option>South Africa</option>
+     <option>Spain</option>
+     <option>Sri Lanka</option>
+     <option>Sudan</option>
+     <option>Suriname</option>
+     <option>Sweden</option>
+     <option>Switzerland</option>
+     <option>Syria</option>
+     <option>Taiwan</option>
+     <option>Tajikistan</option>
+     <option>Tanzania</option>
+     <option>Thailand</option>
+     <option>Trinidad and Tobago</option>
+     <option>Tunisia</option>
+     <option>Turkey</option>
+     <option>Turkmenistan</option>
+     <option>Uganda</option>
+     <option>Ukraine</option>
+     <option>United Arab Emirates</option>
+     <option>United Kingdom</option>
+     <option>United States of America</option>
+     <option>Uruguay</option>
+     <option>Uzbekistan</option>
+     <option>Venezuela</option>
+     <option>Vietnam</option>
+     <option>Zambia</option>
+     <option>Zimbabwe</option>
+     <option>Outer space</option>
+     <option>Oceans / Seas</option>
+		</select></p>
+	</form>
+</SPAN>
+</div>
+</div>
+
+</body>
+
+</html>

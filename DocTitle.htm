@@ -1,0 +1,58 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Document Title</title>
+<style>
+body{background-color:#FAF0F8}
+::-webkit-scrollbar {width: 10px;height: 0px;}
+::-webkit-scrollbar-thumb {background-color: rgba(100,170,200, 1);border-radius: 0 1px 1px 0;}
+::-webkit-scrollbar-track {background: rgba(117,191,248, 0.5);}    
+</style>
+<script language="javascript" type="text/javascript">
+var docpath='data/document/';
+var fileArray=['aess','lifeelements','elecconfig','actinides','groupone','grouptwo','halogens','lanthanides','inertgases','transition'];
+
+function runDoctitle(nr){
+//document.getElementsByName['Docholder'].item=docpath+fileArray[nr]+'.htm';
+//Docholder.location.href=docpath+fileArray[nr]+'.htm';
+  Docholder.location.href=docpath+fileArray[nr]+'.htm';
+}
+</script>
+</head>
+
+<body>
+
+<div style="position: absolute; width: 643px; height: 577px; z-index: 1; left:12px; top:44px" id="layer1">
+  <iframe name="Docholder" width="700" height="573" src="data/document/aess.htm" target="content">
+    Your browser does not support inline frames or is currently configured not to display inline frames.
+  </iframe>
+</div>
+
+<div style="position: absolute; width: 636px; height: 24px; z-index: 2; left: 17px; top: 21px" id="layer2">
+	<form name='FormDoc' method="POST">
+		<span style="font-size: 9pt"><font size="1">
+		<select size="1" name="Pilihan"  onchange='runDoctitle(this.selectedIndex)' style="font-size: 9pt">
+		<option selected>Abundance of the Elements in the Solar System</option>
+		<option>Chemical makeup of the human body</option>
+		<option>Understanding Electron Configuration Tables</option>
+		<option>The Actinoid Series</option>
+		<option>The Alkali (Group 1) Metals</option>
+		<option>The Alkaline Earth Metals (Group 2)</option>
+		<option>The Halogens (Group 2)</option>
+		<option>The Lanthanoid Series</option>
+		<option>The Noble Gases (Group 18)</option>
+		<option>The Transition Metals (Group 3 to 12)</option>
+		</select>
+		</font>
+		</span>
+	</form>
+</div>
+<!--
+<div style="position: absolute; width: 80px; height: 16px; z-index: 3; left: 22px; top: 2px" id="layer3">
+	<font face="MS Sans Serif" style="font-size: 9pt"></font>
+</div>-->
+
+</body>
+
+</html>

@@ -1,0 +1,499 @@
+<html>	
+  <head>
+    <meta HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=unicode">-->
+    <title>Measure Conversion</title>
+    <style>
+      input, td, div, p {font-family:'arial,verdana,arial,Simsun'; font-size:9pt;}
+      .tb {font-family:'arial,verdana,arial,Simsun'; font-size:9pt;}
+      blockquote { color: blue; font-family:'arial,verdana,arial,Simsun'; font-size:34pt; text-align: left}
+      .tx {font-family:'arial,verdana,arial,Simsun'; font-size:24pt; text-align: inherit }
+      .curtab { background-Color: #FFFFFF; cursor: hand; border-bottom: 1 solid #ffffff; color: #07519A; font-size:9pt; font-weight: bold; }
+      .notab { background-Color: #EBF3FB; cursor: hand; color: #07519A; font-size:9pt; font-weight: bold; }
+      
+      .tab {height: 20px;	margin: 0 auto;	padding-left: 10px;}
+      .tab li {	margin: 0;	padding: 0;	display: inline;	list-style-type: none;}
+      .tab a:link, .tab a:visited {	float: left;	background: #ddd;	font-size: 100%;line-height: 14px;	font-weight: bold;	padding: 2px 10px;	margin-right: 4px;	border: 1px solid #aaa;	text-decoration: none;	color: #666;}
+      .tab a:link.active, .tab a:visited.active {	border-bottom: 1px solid #eee;	background: #eee;	color: #000;}
+      .tab a:hover {	background: #eee;}
+      /*body{background-color:#FAF0F8}*/
+      ::-webkit-scrollbar {width: 10px;height: 0px;}
+      ::-webkit-scrollbar-thumb {background-color: rgba(100,170,200, 1);border-radius: 0 1px 1px 0;}
+      ::-webkit-scrollbar-track {background: rgba(117,191,248, 0.5);}    
+      
+      
+      </style>
+
+<script type=text/javascript>
+function tabit(btn, page)
+{
+  for(i=0;i<2;i++)
+  {
+    if(i == page)
+    {
+      //btn.className='curtab';
+      document.getElementById("tab"+i).className='curtab';
+      document.getElementById("page"+i).style.display = "";
+    }
+    else
+    {
+      //btn.className='notab';
+      document.getElementById("tab"+i).className='notab';
+      document.getElementById("page"+i).style.display = "none";
+    }
+  }
+// document.getElementById(tabName+"_div_"+id).style.display = "block";
+// btn.style.backgroundColor = "#FFFEF2";
+// btn.style.borderBottomColor = "#FFFEF2";
+// btn.style.cursor = "default";
+};
+
+</script>
+<script language="javascript" type="text/javascript" src='Elecconf.js' > </script>                                                                                                               
+  </head>                                                                                                               
+  <body  onload="javascript:init()" bgcolor="#EAF0F8" topmargin="10" leftmargin="10" rightmargin="10" bottommargin="10">
+    <div align="center" style="font-family: Tahoma, arial; font-size: 10.5pt; line-height:120%; margin: 0 0 5 0; font-weight:bold">
+    <div style="border:0px solid #000000; position: absolute; width: 457px; height: 100px; z-index: 9; left: 171px; top: 48px" id="maindiv">
+                                                                                                                        
+                                                                                                                        
+   <table style="font-family:'Tahoma, Arial'; font-size:10pt" border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#AACCEE" style="border-collapse: collapse">
+                                                                                                                        
+      <tr>                                                                                                              
+                                                                                                                        
+			<ul class="tab">                                                                                                     
+				<li>                                                                                                                
+				<a id="tab0" href="javascript:tabit(this, 0);"  class="curtab">Block Notation</a>                                   
+				<a id="tab1" href="javascript:tabit(this, 1);" class="notab">Diagram</a></li>                                       
+			</ul>                                                                                                                
+<!--                                                                                                                    
+                                                                                                                       
+        <td id="tab0" width="48%" align="center" onclick="tabit(this, 0)" class="curtab">Block Notation</td>            
+        <td id="tab1" width="48%" align="center" onclick="tabit(this, 1)" class="notab">Diagram</td>                    
+-->                                                                                                                     
+
+  </tr>                                                                                                                 
+<!--///////////////////style="display:; border-collapse:collapse"/////////////-->                                                                                                                         
+      <tr>                                                                                                              
+        <td align="center" colspan="2" bgcolor="#FFFFFF" width="75%" style="padding: 10; font-family:arial,verdana,arial,Simsun; font-size:9pt" height="510">
+          <table id="page0" class="tb" style="display:" cellSpacing=0 borderColorDark=#ffffff cellPadding=2 width="100%" align=center bgColor=#cccccc border=0 height="500">
+  	      <form method="Post" name="BoxNot">                                                                             
+            <tbody>                                                                                                     
+              <tr bgcolor="#FAFFF8">                                                                                     
+                <td style="font-family: arial,verdana,arial,Simsun; font-size: 9pt">                                    
+                                                                                                                        
+<!---====================================ElectroConfigur================================================================-->                
+<!---    <div style="position: absolute; width: 378px; height: 17px; z-index: 10; left: 512px; top: 270px" id="ElectroConfigur">
+		<p align="center">                                                                                                    
+		<input type="text" name="elecconf" style="font-size: 7pt; border: 0px solid #e0e0e0; text-align:center" size="92"></div>--->
+		<div style="position: absolute; width: 396px; height: 17px; z-index: 10; left: 17px; top: 284px" id="ElectroConfigur" align="center"><h1  id='elecconf' align="center"></h1>&nbsp;</div>                                                                                                          
+<!---====================================ElectroConfigur================================================================-->                
+	                                                                                                                       
+   <div align="center">                                                                                                 
+                                                                                                                        
+		<div style="position: absolute; width: 343px; height: 15px; z-index: 1; left: 59px; top: 54px" id="spdf">             
+			<table border="0" width="100%" cellpadding="0" style="border-collapse: collapse">                                    
+					<tr><td width="51"><b><font size="2">s</font></b></td><td width="91"><b><font size="2">p</font></b></td><td><b><font size="2">d</font></b></td><td><b><font size="2">f</font></b></td></tr>
+			</table>                                                                                                             
+		</div>                                                                                                                
+                                                                                                                        
+		<div style="position: absolute; width: 21px; height: 196px; z-index: 11; left: 23px; top: 75px" id="s1f7">            
+			<table border="0" width="64%" height="198" cellspacing="0" cellpadding="0">                                          
+				<tr><td align="center"><b><font size="2" face="Arial">1</font></b></td></tr>                                        
+				<tr><td align="center"><b><font size="2" face="Arial">2</font></b></td></tr>                                        
+				<tr><td align="center"><b><font size="2" face="Arial">3</font></b></td></tr>                                        
+				<tr><td align="center"><b><font size="2" face="Arial">4</font></b></td></tr>                                        
+				<tr><td align="center"><b><font size="2" face="Arial">5</font></b></td></tr>                                        
+				<tr><td align="center"><b><font size="2" face="Arial">6</font></b></td></tr>                                        
+				<tr><td align="center"><b><font size="2" face="Arial">7</font></b></td></tr>                                        
+			</table>                                                                                                             
+		</div>&nbsp;                                                                                                          
+   </div>                                                                                                               
+<!---====================================Box Notation================================================================-->                
+                                                                                                                        
+		<div style="position: absolute; width: 349px; height: 200px; z-index: 4; left: 53px; top: 75px; font-family:arial,verdana,arial,Simsun; font-size:9pt" id="BoxNotation">
+        <!---====================================Garis Bayangan=========================================================-->
+<!--1--->        <div style="position: absolute; width: 16px; height: 10px; z-index: 0; left: 2px; top: 180px" id="layer20"><hr size="7" noshade color="#EAF0F8"></div>
+<!--2--->        <div style="position: absolute; width: 16px; height: 10px; z-index: 0; left: 2px; top: 150px" id="layer19"><hr size="7" noshade color="#EAF0F8"></div>
+                 <div style="position: absolute; width: 16px; height: 10px; z-index: 0; left: 2px; top: 120px" id="layer18"><hr size="7" noshade color="#EAF0F8"></div>
+<!--3--->        <div style="position: absolute; width: 16px; height: 10px; z-index: 0; left: 2px; top: 89px" id="layer17"><hr size="7" noshade color="#EAF0F8"></div>
+                 <div style="position: absolute; width: 16px; height: 10px; z-index: 0; left: 2px; top: 59px" id="layer16"><hr size="7" noshade color="#EAF0F8"></div>
+                 <div style="position: absolute; width: 16px; height: 10px; z-index: 0; left: 2px; top: 29px" id="layer15"><hr size="7" noshade color="#EAF0F8"></div>
+<!--4--->        <div style="position: absolute; width: 16px; height: 10px; z-index: 0; left: 2px; top: 0px" id="layer14"><hr size="7" noshade color="#EAF0F8"></div>
+                 <div style="position: absolute; width: 61px; height: 10px; z-index: 0; left: 29px; top: 180px" id="layer13"><hr size="7" noshade color="#EAF0F8"></div>
+                 <div style="position: absolute; width: 61px; height: 10px; z-index: 0; left: 29px; top: 150px" id="layer12"><hr size="7" noshade color="#EAF0F8"></div>
+                 <div style="position: absolute; width: 61px; height: 10px; z-index: 0; left: 29px; top: 120px" id="layer11"><hr size="7" noshade color="#EAF0F8"></div>
+<!--5--->        <div style="position: absolute; width: 61px; height: 10px; z-index: 0; left: 29px; top: 89px" id="layer10"><hr size="7" noshade color="#EAF0F8"></div>
+                 <div style="position: absolute; width: 61px; height: 10px; z-index: 0; left: 29px; top: 59px" id="layer9"><hr size="7" noshade color="#EAF0F8"></div>
+                 <div style="position: absolute; width: 61px; height: 10px; z-index: 0; left: 29px; top: 29px" id="layer8"><hr size="7" noshade color="#EAF0F8"></div>
+                 <div style="position: absolute; width: 98px; height: 10px; z-index: 0; left: 101px; top: 150px" id="layer7"><hr size="7" noshade color="#EAF0F8"></div>
+<!--6--->        <div style="position: absolute; width: 98px; height: 10px; z-index: 0; left: 101px; top: 120px" id="layer6"><hr size="7" noshade color="#EAF0F8"></div>
+                 <div style="position: absolute; width: 98px; height: 10px; z-index: 0; left: 101px; top: 89px" id="layer5"><hr size="7" noshade color="#EAF0F8"></div>
+                 <div style="position: absolute; width: 98px; height: 10px; z-index: 0; left: 101px; top: 59px" id="layer4"><hr size="7" noshade color="#EAF0F8"></div>
+<!--7--->        <div style="position: absolute; width: 136px; height: 10px; z-index: 0; left: 211px; top: 120px" id="layer3"><hr size="7" noshade color="#EAF0F8"></div>
+                 <div style="position: absolute; width: 136px; height: 10px; z-index: 0; left: 211px; top: 89px" id="layer2"><hr size="7" noshade color="#EAF0F8"></div>
+        <!---====================================Garis Bayangan=========================================================-->
+                                                                                                                        
+<!--1--->                                                                                                               
+	        <div onmouseover= "javascript : ShowImg('o1.bmp','0','0','1');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 0px; top: 0px; border: 1px solid #000000; padding: 0px; background-color: #C0FFC0" id="s11"></div>
+          <div onmouseover= "javascript : ShowImg('o1.bmp','0','0','1');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 10px; top:0px; border: 1px solid #000000; padding: 0px; background-color: #C0FFC0" id="s12"></div>
+<!--2--->                                                                                                               
+                                                                                                                        
+					<div onmouseover= "javascript : ShowImg('o2.bmp','0','0','2');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 0px; top: 30px; border: 1px solid #000000; padding: 0px; background-color: #E8FFC1" id="s21"></div>
+					<div onmouseover= "javascript : ShowImg('o2.bmp','0','0','2');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 10px; top:30px; border: 1px solid #000000; padding: 0px; background-color: #E8FFC1" id="s22"></div>
+                                                                                                                        
+					<div onmouseover= "javascript : ShowImg('o3.bmp','1','-1','2');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 30px; top: 30px; border: 1px solid #000000; padding: 0px; background-color: #E8FFC1" id="p21"></div>
+					<div onmouseover= "javascript : ShowImg('o3.bmp','1','-1','2');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 40px; top: 30px; border: 1px solid #000000; padding: 0px; background-color: #E8FFC1" id="p22"></div>
+					<div onmouseover= "javascript : ShowImg('o4.bmp','1','0','2');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 50px; top: 30px; border: 1px solid #000000; padding: 0px; background-color: #E8FFC1" id="p23"></div>
+					<div onmouseover= "javascript : ShowImg('o4.bmp','1','0','2');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 60px; top: 30px; border: 1px solid #000000; padding: 0px; background-color: #E8FFC1" id="p24"></div>
+					<div onmouseover= "javascript : ShowImg('o5.bmp','1','1','2');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 70px; top: 30px; border: 1px solid #000000; padding: 0px; background-color: #E8FFC1" id="p25"></div>
+					<div onmouseover= "javascript : ShowImg('o5.bmp','1','1','2');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 80px; top: 30px; border: 1px solid #000000; padding: 0px; background-color: #E8FFC1" id="p26"></div>
+<!--3--->                                                                                                               
+					<div onmouseover= "javascript : ShowImg('o6.bmp','0','0','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 0px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="s31"></div>
+					<div onmouseover= "javascript : ShowImg('o6.bmp','0','0','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 10px; top:60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="s32"></div>
+                                                                                                                        
+					<div onmouseover= "javascript : ShowImg('o7.bmp','1','-1','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 30px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="p31"></div>
+					<div onmouseover= "javascript : ShowImg('o7.bmp','1','-1','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 40px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="p32"></div>
+					<div onmouseover= "javascript : ShowImg('o8.bmp','1','0','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 50px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="p33"></div>
+					<div onmouseover= "javascript : ShowImg('o8.bmp','1','0','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 60px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="p34"></div>
+					<div onmouseover= "javascript : ShowImg('o9.bmp','1','1','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 70px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="p35"></div>
+					<div onmouseover= "javascript : ShowImg('o9.bmp','1','1','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 80px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="p36"></div>
+
+					<div onmouseover= "javascript : ShowImg('o10.bmp','2','-2','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 100px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="d31"></div>
+					<div onmouseover= "javascript : ShowImg('o10.bmp','2','-2','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 110px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="d32"></div>
+					<div onmouseover= "javascript : ShowImg('o11.bmp','2','-1','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 120px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="d33"></div>
+					<div onmouseover= "javascript : ShowImg('o11.bmp','2','-1','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 130px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="d34"></div>
+					<div onmouseover= "javascript : ShowImg('o12.bmp','2','0','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 140px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="d35"></div>
+					<div onmouseover= "javascript : ShowImg('o12.bmp','2','0','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 150px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="d36"></div>
+					<div onmouseover= "javascript : ShowImg('o13.bmp','2','1','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 160px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="d37"></div>
+					<div onmouseover= "javascript : ShowImg('o13.bmp','2','1','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 170px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="d38"></div>
+					<div onmouseover= "javascript : ShowImg('o14.bmp','2','2','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 180px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="d39"></div>
+					<div onmouseover= "javascript : ShowImg('o14.bmp','2','2','3');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 190px; top: 60px; border: 1px solid #000000; padding: 0px; background-color: #FFFDC1" id="d310"></div>
+
+<!--4--->
+					<div onmouseover= "javascript : ShowImg('o15.bmp','0','0','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 0px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="s41"></div>
+					<div onmouseover= "javascript : ShowImg('o15.bmp','0','0','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 10px; top:90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="s42"></div>
+
+					<div onmouseover= "javascript : ShowImg('o16.bmp','1','-1','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 30px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="p41"></div>
+					<div onmouseover= "javascript : ShowImg('o16.bmp','1','-1','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 40px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="p42"></div>
+					<div onmouseover= "javascript : ShowImg('o17.bmp','1','0','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 50px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="p43"></div>
+					<div onmouseover= "javascript : ShowImg('o17.bmp','1','0','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 60px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="p44"></div>
+					<div onmouseover= "javascript : ShowImg('o18.bmp','1','1','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 70px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="p45"></div>
+					<div onmouseover= "javascript : ShowImg('o18.bmp','1','1','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 80px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="p46"></div>
+
+
+					<div onmouseover= "javascript : ShowImg('o19.bmp','2','-2','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 100px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="d41"></div>
+					<div onmouseover= "javascript : ShowImg('o19.bmp','2','-2','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 110px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="d42"></div>
+					<div onmouseover= "javascript : ShowImg('o20.bmp','2','-1','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 120px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="d43"></div>
+					<div onmouseover= "javascript : ShowImg('o20.bmp','2','-1','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 130px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="d44"></div>
+					<div onmouseover= "javascript : ShowImg('o21.bmp','2','0','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 140px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="d45"></div>
+					<div onmouseover= "javascript : ShowImg('o21.bmp','2','0','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 150px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="d46"></div>
+					<div onmouseover= "javascript : ShowImg('o22.bmp','2','1','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 160px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="d47"></div>
+					<div onmouseover= "javascript : ShowImg('o22.bmp','2','1','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 170px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="d48"></div>
+					<div onmouseover= "javascript : ShowImg('o23.bmp','2','2','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 180px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="d49"></div>
+					<div onmouseover= "javascript : ShowImg('o23.bmp','2','2','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 190px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="d410"></div>
+
+
+					<div onmouseover= "javascript : ShowImg('o24.bmp','3','-3','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 210px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="f41"></div>
+					<div onmouseover= "javascript : ShowImg('o24.bmp','3','-3','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 220px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="f42"></div>
+					<div onmouseover= "javascript : ShowImg('o25.bmp','3','-2','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 230px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="f43"></div>
+					<div onmouseover= "javascript : ShowImg('o25.bmp','3','-2','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 240px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="f44"></div>
+					<div onmouseover= "javascript : ShowImg('o26.bmp','3','-1','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 250px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="f45"></div>
+					<div onmouseover= "javascript : ShowImg('o26.bmp','3','-1','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 260px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="f46"></div>
+					<div onmouseover= "javascript : ShowImg('o27.bmp','3','0','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 270px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="f47"></div>
+					<div onmouseover= "javascript : ShowImg('o27.bmp','3','0','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 280px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="f48"></div>
+					<div onmouseover= "javascript : ShowImg('o28.bmp','3','1','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 290px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="f49"></div>
+					<div onmouseover= "javascript : ShowImg('o28.bmp','3','1','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 300px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="f410"></div>
+					<div onmouseover= "javascript : ShowImg('o29.bmp','3','2','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 310px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="f411"></div>
+					<div onmouseover= "javascript : ShowImg('o29.bmp','3','2','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 320px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="f412"></div>
+					<div onmouseover= "javascript : ShowImg('o30.bmp','3','3','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 330px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="f413"></div>
+					<div onmouseover= "javascript : ShowImg('o30.bmp','3','3','4');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 340px; top: 90px; border: 1px solid #000000; padding: 0px; background-color: #FFEDC1" id="f414"></div>
+<!--5-->
+					<div onmouseover= "javascript : ShowImg('o31.bmp','0','0','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 0px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="s51"></div>
+					<div onmouseover= "javascript : ShowImg('o31.bmp','0','0','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 10px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="s52"></div>
+
+					<div onmouseover= "javascript : ShowImg('o32.bmp','1','-1','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 30px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="p51"></div>
+					<div onmouseover= "javascript : ShowImg('o32.bmp','1','-1','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 40px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="p52"></div>
+					<div onmouseover= "javascript : ShowImg('o33.bmp','1','0','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 50px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="p53"></div>
+					<div onmouseover= "javascript : ShowImg('o33.bmp','1','0','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 60px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="p54"></div>
+					<div onmouseover= "javascript : ShowImg('o34.bmp','1','1','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 70px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="p55"></div>
+					<div onmouseover= "javascript : ShowImg('o34.bmp','1','1','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 80px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="p56"></div>
+
+
+					<div onmouseover= "javascript : ShowImg('o35.bmp','2','-2','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 100px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="d51"></div>
+					<div onmouseover= "javascript : ShowImg('o35.bmp','2','-2','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 110px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="d52"></div>
+					<div onmouseover= "javascript : ShowImg('o36.bmp','2','-1','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 120px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="d53"></div>
+					<div onmouseover= "javascript : ShowImg('o36.bmp','2','-1','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 130px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="d54"></div>
+					<div onmouseover= "javascript : ShowImg('o37.bmp','2','0','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 140px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="d55"></div>
+					<div onmouseover= "javascript : ShowImg('o37.bmp','2','0','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 150px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="d56"></div>
+					<div onmouseover= "javascript : ShowImg('o38.bmp','2','1','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 160px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="d57"></div>
+					<div onmouseover= "javascript : ShowImg('o38.bmp','2','1','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 170px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="d58"></div>
+					<div onmouseover= "javascript : ShowImg('o39.bmp','2','2','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 180px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="d59"></div>
+					<div onmouseover= "javascript : ShowImg('o39.bmp','2','2','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 190px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="d510"></div>
+
+
+					<div onmouseover= "javascript : ShowImg('o40.bmp','3','-3','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 210px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="f51"></div>
+					<div onmouseover= "javascript : ShowImg('o40.bmp','3','-3','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 220px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="f52"></div>
+					<div onmouseover= "javascript : ShowImg('o41.bmp','3','-2','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 230px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="f53"></div>
+					<div onmouseover= "javascript : ShowImg('o41.bmp','3','-2','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 240px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="f54"></div>
+					<div onmouseover= "javascript : ShowImg('o42.bmp','3','-1','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 250px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="f55"></div>
+					<div onmouseover= "javascript : ShowImg('o42.bmp','3','-1','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 260px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="f56"></div>
+					<div onmouseover= "javascript : ShowImg('o43.bmp','3','0','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 270px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="f57"></div>
+					<div onmouseover= "javascript : ShowImg('o43.bmp','3','0','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 280px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="f58"></div>
+					<div onmouseover= "javascript : ShowImg('o44.bmp','3','1','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 290px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="f59"></div>
+					<div onmouseover= "javascript : ShowImg('o44.bmp','3','1','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 300px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="f510"></div>
+					<div onmouseover= "javascript : ShowImg('o45.bmp','3','2','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 310px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="f511"></div>
+					<div onmouseover= "javascript : ShowImg('o45.bmp','3','2','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 320px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="f512"></div>
+					<div onmouseover= "javascript : ShowImg('o46.bmp','3','3','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 330px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="f513"></div>
+					<div onmouseover= "javascript : ShowImg('o46.bmp','3','3','5');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 340px; top: 120px; border: 1px solid #000000; padding: 0px; background-color: #FFD7C1" id="f514"></div>
+<!--6-->
+					<div onmouseover= "javascript : ShowImg('o47.bmp','0','0','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 0px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="s61"></div>
+					<div onmouseover= "javascript : ShowImg('o47.bmp','0','0','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 10px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="s62"></div>
+
+					<div onmouseover= "javascript : ShowImg('o48.bmp','1','-1','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 30px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="p61"></div>
+					<div onmouseover= "javascript : ShowImg('o48.bmp','1','-1','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 40px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="p62"></div>
+					<div onmouseover= "javascript : ShowImg('o49.bmp','1','0','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 50px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="p63"></div>
+					<div onmouseover= "javascript : ShowImg('o49.bmp','1','0','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 60px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="p64"></div>
+					<div onmouseover= "javascript : ShowImg('o50.bmp','1','1','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 70px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="p65"></div>
+					<div onmouseover= "javascript : ShowImg('o50.bmp','1','1','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 80px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="p66"></div>
+
+
+					<div onmouseover= "javascript : ShowImg('o51.bmp','2','-2','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 100px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="d61"></div>
+					<div onmouseover= "javascript : ShowImg('o51.bmp','2','-2','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 110px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="d62"></div>
+					<div onmouseover= "javascript : ShowImg('o52.bmp','2','-1','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 120px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="d63"></div>
+					<div onmouseover= "javascript : ShowImg('o52.bmp','2','-1','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 130px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="d64"></div>
+					<div onmouseover= "javascript : ShowImg('o53.bmp','2','0','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 140px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="d65"></div>
+					<div onmouseover= "javascript : ShowImg('o53.bmp','2','0','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 150px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="d66"></div>
+					<div onmouseover= "javascript : ShowImg('o54.bmp','2','1','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 160px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="d67"></div>
+					<div onmouseover= "javascript : ShowImg('o54.bmp','2','1','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 170px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="d68"></div>
+					<div onmouseover= "javascript : ShowImg('o55.bmp','2','2','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 180px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="d69"></div>
+					<div onmouseover= "javascript : ShowImg('o55.bmp','2','2','6');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 190px; top: 150px; border: 1px solid #000000; padding: 0px; background-color: #FFC7C1" id="d610"></div>
+<!--7-->
+					<div onmouseover= "javascript : ShowImg('o56.bmp','0','0','7');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 0px; top: 180px; border: 1px solid #000000; padding: 0px; background-color: #FFC1D3" id="s71"></div>
+					<div onmouseover= "javascript : ShowImg('o56.bmp','0','0','7');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 10px; top: 180px; border: 1px solid #000000; padding: 0px; background-color: #FFC1D3" id="s72"></div>
+
+					<div onmouseover= "javascript : ShowImg('o57.bmp','1','-1','7');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 30px; top: 180px; border: 1px solid #000000; padding: 0px; background-color: #FFC1D3" id="p71"></div>
+					<div onmouseover= "javascript : ShowImg('o57.bmp','1','-1','7');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 40px; top: 180px; border: 1px solid #000000; padding: 0px; background-color: #FFC1D3" id="p72"></div>
+					<div onmouseover= "javascript : ShowImg('o58.bmp','1','0','7');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 50px; top: 180px; border: 1px solid #000000; padding: 0px; background-color: #FFC1D3" id="p73"></div>
+					<div onmouseover= "javascript : ShowImg('o58.bmp','1','0','7');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 60px; top: 180px; border: 1px solid #000000; padding: 0px; background-color: #FFC1D3" id="p74"></div>
+					<div onmouseover= "javascript : ShowImg('o59.bmp','1','1','7');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 70px; top: 180px; border: 1px solid #000000; padding: 0px; background-color: #FFC1D3" id="p75"></div>
+					<div onmouseover= "javascript : ShowImg('o59.bmp','1','1','7');" style="position: absolute; width: 8px; height: 20px; z-index: 1; left: 80px; top: 180px; border: 1px solid #000000; padding: 0px; background-color: #FFC1D3" id="p76"></div>
+
+ 				 </div>
+<!---====================================Box Notation================================================================-->                
+
+    
+
+<!--Pic-->  <div style="position: absolute; width: 95px; height: 98px; z-index: 5; left: 28px; top: 332px"  id="Im"><img src="data/images/orbitals/o1.bmp" name="picture"></div>
+<!--l-->    <div style="position: absolute; width: 70px; height: 17px; z-index: 10; left: 156px; top: 349px" id="l">l:<input type="text" name="e_l" size="4" style="font-size: 9pt; border: 0px solid #e0e0e0"></div>		
+<!--m-->    <div style="position: absolute; width: 70px; height: 17px; z-index: 10; left: 147px; top: 370px" id="m">m:<input type="text" name="e_m" size="4" style="font-size: 9pt; border: 0px solid #e0e0e0"></div>		
+<!--n-->    <div style="position: absolute; width: 70px; height: 17px; z-index: 10; left: 153px; top: 391px" id="n">n:<input type="text" name="e_n" size="4" style="font-size: 9pt; border: 0px solid #e0e0e0"></div>		
+	  	</td>
+          </tr>
+            </tbody>
+            </form>
+          </table>
+
+
+ <!--///////////////////////////////////////////////style="display:none" /////-->
+           <table id="page1" class="tb" style="display:none; border-collapse:collapse" cellSpacing=0 borderColorDark=#000000 cellPadding=2 width="100%" align=center bgColor=#cccccc border=0 height="500">
+            <tbody>
+              <tr bgcolor="ffffff">
+                <td style="font-family: arial,verdana,arial,Simsun; font-size: 9pt">
+				           
+				           
+				           <div style="position: absolute; width: 457px; height: 433px; z-index: 12; left: 3px; top: 20px; background-color:black" id="layer23">
+							<img name="ChangingPix" style="width: 457px; height: 433px;background-color:black"" src="data/images/DiagramOrbit/1/H1.png"></div>
+							<p>&nbsp;</td>
+              </tr>
+            </tbody>
+          </table>
+ <!--////////////////////////////////////////////////////-->
+         </div>
+ 
+        </td>
+      </tr>
+    </table>
+    </div>
+    
+	<div style="position: absolute; width: 100px; height: 17px; z-index: 12; left: 475px; top: 4px" id="layer22">
+		<span style="font-weight: 400">Shells Structure</span></div>
+    
+<!--///////////////////////////////////////////-->
+<div style="position: absolute; width: 139px; height: 554px; z-index: 10; left: 11px; top: 0px" id="Element">
+
+<form method="POST" name='elSelect' id='elSelect'>
+	<select onclick='run(this.selectedIndex)' onChange='stop(this.selectedIndex)' ondblclick='stop(this.selectedIndex)' size="10" name="Element" id="Element" style="width:150; height:574; font-size:8pt;background-color:#FAF0F8">
+	<option>Element List</option>
+	<option selected>Hydrogen</option>
+	<option>Helium</option>
+	<option>Lithium</option>
+	<option>Beryllium</option>
+	<option>Boron</option>
+	<option>Carbon</option>
+	<option>Nitrogen</option>
+	<option>Oxygen</option>
+	<option>Flourine</option>
+	<option>Neon</option>
+	<option>Sodium</option>
+	<option>Magnesium</option>
+	<option>Aluminum</option>
+	<option>Silicon</option>
+	<option>Phosphorous</option>
+	<option>Sulfur</option>
+	<option>Chlorine</option>
+	<option>Argon</option>
+	<option>Potassium</option>
+	<option>Calcium</option>
+	<option>Scandium</option>
+	<option>Titanium</option>
+	<option>Vandium</option>
+	<option>Chromium</option>
+	<option>Manganese</option>
+	<option>Iron</option>
+	<option>Cobalt</option>
+	<option>Nickel</option>
+	<option>Copper</option>
+	<option>Zinc</option>
+	<option>Gallium</option>
+	<option>Germanium</option>
+	<option>Arsenic</option>
+	<option>Selenium</option>
+	<option>Bromine</option>
+	<option>Krypton</option>
+	<option>Rubidium</option>
+	<option>Strontium</option>
+	<option>Yttrium</option>
+	<option>Zirconium</option>
+	<option>Niobium</option>
+	<option>Molybdenum</option>
+	<option>Technetium</option>
+	<option>Ruthenium</option>
+	<option>Rhodium</option>
+	<option>Palladium</option>
+	<option>Silver</option>
+	<option>Cadmium</option>
+	<option>Indium</option>
+	<option>Tin</option>
+	<option>Antimony</option>
+	<option>Tellurium</option>
+	<option>Iodine</option>
+	<option>Xenon</option>
+	<option>Cesium</option>
+	<option>Barium</option>
+	<option>Lanthanum</option>
+	<option>Cerium</option>
+	<option>Praseodymium</option>
+	<option>Neodymium</option>
+	<option>Promethium</option>
+	<option>Samarium</option>
+	<option>Europium</option>
+	<option>Gadolinium</option>
+	<option>Terbium</option>
+	<option>Dysprosium</option>
+	<option>Holmium</option>
+	<option>Erbium</option>
+	<option>Thulium</option>
+	<option>Ytterbium</option>
+	<option>Lutetium</option>
+	<option>Hafnium</option>
+	<option>Tantalum</option>
+	<option>Tungsten</option>
+	<option>Rhenium</option>
+	<option>Osmium</option>
+	<option>Iridium</option>
+	<option>Platinum</option>
+	<option>Gold</option>
+	<option>Mercury</option>
+	<option>Thallium</option>
+	<option>Lead</option>
+	<option>Bismuth</option>
+	<option>Polonium</option>
+	<option>Astatine</option>
+	<option>Radon</option>
+	<option>Francium</option>
+	<option>Radium</option>
+	<option>Actinium</option>
+	<option>Thorium</option>
+	<option>Proactinium</option>
+	<option>Uranium</option>
+	<option>Neptunium</option>
+	<option>Plutonium</option>
+	<option>Americium</option>
+	<option>Curium</option>
+	<option>Berkelium</option>
+	<option>Californium</option>
+	<option>Einsteinium</option>
+	<option>Fremium</option>
+	<option>Mendelevium</option>
+	<option>Nobelium</option>
+	<option>Lawrencium</option>
+	<option>Rutherfordium</option>
+	<option>Dubnium</option>
+	<option>Seaborgium</option>
+	<option>Bohriium</option>
+	<option>Hassium</option>
+	<option>Meitnerium</option>
+	<option>Darmstadtium</option>
+	<option>Roentgenium</option>
+	<option>Ununbium</option>
+	<option>Ununtrium</option>
+	<option>Ununquadium</option>
+	<option>Ununpentium</option>
+	<option>Ununhexium</option>
+	<option>Ununseptium</option>
+	<option>Ununoctium</option>
+	</select></form>
+</div>
+  	<form method="Post" name="OutBox">
+<!--<div style="position: absolute; width: 220px; height: 17px; z-index: 10; left: 168px; top: 49px" id="AtomicNumber"><p align="left"><span style="font-weight: 400"><font size="1">AtomicNumber (Z)&nbsp;&nbsp;&nbsp;&nbsp; </font></span><input type="text" name="AtomicNumber" style="font-size: 9pt; border: 0px solid #e0e0e0" size="15"></div>-->
+  	<div style="position: absolute; width: 118px; height: 15px; z-index: 11; left: 171px; top: 26px" id="layer21" align="left"><span style="font-weight: 400">Atomic Number (Z) :</span></div>
+    <div style="position: absolute; width: 79px; height: 17px; z-index: 10; left: 285px; top: 26px" id="AtomicNumber" align="left"><h1 id='AtomicNumber' align="center"></h1>&nbsp;</div> 
+<!-- <div style="position: absolute; width: 159px; height: 17px; z-index: 10; left: 173px; top: 21px" id="AtomicName"><input type="text" name="AtomicName" style="font-size: 10pt; border: 0px solid #e0e0e0; font-weight:bold" size="24"></div>-->
+	  <div style="position: absolute; width: 159px; height: 17px; z-index: 10; left: 173px; top: -4px" id="AtomicName" align="left"><h1 id='AtomicName' align="center"></h1>&nbsp;</div>
+    
+<!--<div style="position: absolute; width: 169px; height: 33px; z-index: 10; left: 456px; top: 23px" id="ShellsStructure"><font size="1">Shells Structures</font> 
+		<input type="text" name="ShellsStructure" style="font-size: 9pt; border: 0px solid #e0e0e0; text-align:center" size="31"></div>-->
+    <div style="position: absolute; width: 169px; height: 15px; z-index: 10; left: 443px; top: 26px" id="ShellsStructure"> 
+		<h1 id='ShellsStructure' align="center"></h1>&nbsp;</div>
+
+<!--
+    <div style="position: absolute; width: 89px; height: 48px; z-index: 10; left: 259px; top: 526px" id="AtomicSymbols"><font size="5">
+		<input name="AtomicSymbols" style="font-size: 42pt; border: 0px solid #e0e0e0; font-family:Arial; font-weight:bold" size="3"></font></div>-->
+<!--     <div class='tx' style="position: absolute; width: 112px;  height: 62px; z-index: 10; left: 259px; top: 533px" id='AtomicSymbols'></div>-->
+     <div style="position: absolute; width: 80px;  height: 62px; z-index: 10; left: 199px; top: 475px"><blockquote style="position: relative; top:23px" id='AtomicSymbols'></blockquote></div>
+
+
+<!--
+    <div style="position: absolute; width: 70px; height: 17px; z-index: 10; left: 183px; top: 574px" id="NotationDown">
+		<input name="NotationDown" size="4" style="font-size: 12pt; border: 0px solid #e0e0e0; font-family:Arial; font-weight:bold; float:right"></div>-->		
+
+        <div style="position: absolute; width: 70px; height: 17px; z-index: 10; left: 183px; top: 561px" id="NotationDown">
+        <blockquote style="position: relative; top:2px; font-size:34pt;" id='NotationDown'></blockquote></div>
+<!--
+	<div style="position: absolute; width: 70px; height: 17px; z-index: 10; left: 183px; top: 528px" id="NotationUp"><font size="4">
+		<input name="NotationUp" size="4" style="font-size: 12pt; border: 0px solid #e0e0e0; font-family:Arial; font-weight:bold; float:right"></font></div>	-->	
+    <div style="position: absolute; width: 70px; height: 17px; z-index: 10; left: 183px; top: 527px" id="NotationUp"><font size="4">
+     <blockquote style="position: relative; top:2px; font-size:34pt;" id='NotationUp'></blockquote></div>  
+  </form>
+<!--///////////////////////////////////////////-->
+<script>
+///////////
+
+//(function loadFromURL() {
+var electrn = location.search.replace("?", "") || location.hash.replace("#", "");
+if (electrn.indexOf("&")!=-1) {
+    electrn = electrn.split("&");
+    electrn[1]=null;
+    run(electrn[0]);
+    document.elSelect.Element.selectedIndex=electrn[0];
+}
+if (electrn) {
+    run(electrn);
+    document.elSelect.Element.selectedIndex=electrn;
+}
+//})();
+
+</script>
+
+</body>
+</html>

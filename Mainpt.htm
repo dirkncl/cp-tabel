@@ -1,0 +1,26 @@
+<html>
+  <head>
+  <title>Periodic Table</title>
+  </head>
+  
+  <frameset cols="730,*" framespacing="0" border="0" frameborder="0">
+    <frameset rows="6%,*">
+      <frame name="navtop" target="content" src="HeadNav.htm" scrolling="yes">
+      <frame name="nav" scrolling="yes" noresize target="rtop" src="index.htm">
+    </frameset>
+  
+    <frameset rows="5%,*">
+      <frame name="rtop" target="content"src="search.html" scrolling="auto">
+      <frame name="content" src="data/elements/1.htm">
+    </frameset>
+    <noframes>
+  
+    <body onload="setTimeout('popupPage()', 50);">
+  
+      <p>This page uses frames, but your browser doesn't support them.</p>
+  
+    </body>
+    </noframes>
+  </frameset>
+
+</html>
