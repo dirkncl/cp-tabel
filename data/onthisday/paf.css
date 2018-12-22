@@ -1,0 +1,10 @@
+.blink {color:#006666;}
+.elink {color:#006600;}
+.glink {color:#000066;}
+.wlink {color:#660066;}
+.H1 {font-family: Verdana; font-size:10pt; color:#888888; font-weight:bold;}
+.JF {font-family: Verdana; font-size:10pt; color:#000000;}
+body{background-color:#FAF0F8}
+::-webkit-scrollbar {width: 10px;height: 0px;}
+::-webkit-scrollbar-thumb {background-color: rgba(100,170,200, 1);border-radius: 0 1px 1px 0;}
+::-webkit-scrollbar-track {background: rgba(117,191,248, 0.5);}
