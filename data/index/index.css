@@ -1,0 +1,13 @@
+A:link {font-family: Verdana; font-size:8pt; color:#000066; text-decoration: none}
+A:visited {font-family: Verdana; font-size:8pt; color:#000066; text-decoration: none}
+A:hover {font-family: Verdana; font-size:8pt; color:#FF0000; text-decoration: underline}
+A:active {font-family: Verdana; font-size:8pt; color:#000066; text-decoration: none}
+.H1 {font-family: Verdana; font-size:10pt; color:#000000; font-weight:bold;}
+.JF {font-family: Verdana; font-size:10pt; color:#000000;}
+.JX {font-family: Verdana; font-size:8pt; color:#666666;}
+.CX {font-family: Verdana; font-size:7pt; color:#888888;}
+.PF {font-family: Verdana; font-size:8pt; color:#000000;}
+body{background-color:#FAF0F8}
+::-webkit-scrollbar {width: 10px;height: 0px;}
+::-webkit-scrollbar-thumb {background-color: rgba(100,170,200, 1);border-radius: 0 1px 1px 0;}
+::-webkit-scrollbar-track {background: rgba(117,191,248, 0.5);}
