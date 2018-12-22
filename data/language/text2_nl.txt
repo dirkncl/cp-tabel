@@ -1,0 +1,40 @@
+Abundance (Earth's Crust)
+Abundance (Sun)
+Abundance (Universe)
+Abundance (Human by #atoms)
+Atomic Number
+Atomic Mass
+Atomic Radius
+Atomic Volume
+Brinell Hardness
+Boiling Point
+Bulk Modulus
+Density
+Discovery Location
+Electrical Conductivity
+Electronegativity 
+Enthalpy of Fusion
+Enthalpy of Vapourisation
+Heat Capacity
+Melting Point
+Magnetic Ordering
+Poisson Ratio
+Shear Modulus
+Speed of Sound
+Symbol
+Thermal Conductivity
+Thermal Expansion
+Vickers Hardness
+Young's Modulus
+Discovery Date
+Abundance (Human by #weight)
+Electrical Resistivity
+Atomic Radius (Bohr)
+Atomic Radius (Covalent) 
+Atomic Radius (Van der Waals)
+Atomic Radius (Triple bond)
+Atomic Radius (Metallic)
+Mass magnetic susceptibility
+Molar magnetic susceptibility
+Enthalpy of Atomization
+Valence Electron Potential

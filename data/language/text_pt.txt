@@ -1,0 +1,133 @@
+by Name
+by Atomic Number
+by Discovery Date
+by Discoverer
+glossary
+biography
+website
+about
+register
+Search
+Go!
+back
+physical state of element under standard conditions
+solid
+liquid
+gas
+synthetic
+dynamic
+display all
+table view
+Display Mode
+Search for ...
+All keywords search
+Main
+Graph
+Atomic Radii
+Atomic
+Radius
+Structure
+element tables
+by Abundance (Earth's Crust)
+by Abundance (Sun)
+by Abundance (Universe)
+by Abundance (Human)
+by Atomic Mass
+!
+by Atomic Radius
+by Atomic Volume
+by Brinell Hardness
+by Boiling Point
+!
+by Density
+by Electrical Conductivity
+by Electrical Resistivity
+by Electronegativity (Pauling)
+by Enthalpy of Fusion
+by Enthalpy of Vapourisation
+by Heat Capacity
+by Discovery Location
+by Melting Point
+!
+by Symbol
+by Thermal Conductivity
+by Thermal Expansion
+by Bulk Modulus
+by Poisson Ratio
+by Shear Modulus
+by Vickers Hardness
+by Young's Modulus
+by Speed of Sound
+Options
+Default page
+Document Title
+Main properties
+Other properties
+Isotopes
+Compounds
+Spectra
+Reactions
+Production
+Atomic MAC Data
+Atomic Reference
+Naming
+---- Default View ----
+Melting Point
+Boiling Point
+Atomic Radius
+Atomic Mass
+Density
+Enthalpy of Fusion
+Enthalpy of Vaporisation
+Heat Capacity
+Thermal Conductivity
+Thermal Expansion
+Discovery Date
+All (up to 103)
+Transition Metals
+Alkali Earth Metals
+Halogens
+Non-Metals
+Metalloids
+Noble Gases
+Alkali Metals
+Metals
+Lanthanoids
+Actinoids
+* Custom
+<-- select
+Melting Point
+Boiling Point
+Atomic Radius
+Atomic Weight
+Density
+Enthalpy of Fusion
+Enthalpy of Vaporisation
+Heat Capacity
+Thermal Conductivity
+Thermal Expansion
+Atomic Radius
+Bohr radius
+Covalent Radius
+Van der Waals
+Triple covalent
+Metallic
+Absorption Spectrum
+Emission Spectrum
+Occurrence
+Block
+Colour
+Graph
+Both
+Primordial
+Synthetic
+From decay
+s-block
+p-block
+d-block
+f-block
+Lithophile
+Siderophile
+Chalcophile
+Atmophile
+Very rare

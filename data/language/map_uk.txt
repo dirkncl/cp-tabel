@@ -1,0 +1,138 @@
+AF#c2fefd:Afghanistan
+AL#fec5c2:Albania
+DZ#c1fff3:Algeria
+AR#e0c1ff:Argentina
+AM#d6c3fd:Armenia
+AU#c0ffFF:Australia
+AT#c3e0fd:Austria
+AZ#c6fed9:Azerbaijan
+BE#fdc3f8:Belgium
+BT#fef4c6:Bhutan
+BO#fff1c1:Bolivia
+BA#d2effe:Bosnia and Herzegovina
+BW#ffc1df:Botswana
+BG#c3fde9:Bulgaria
+BF#f8c1ff:Burkina Faso
+MM#c2f1fe:Burma (Myanmar)
+BI#fec6dd:Burundi
+BR#c0ffc0:Brazil
+CM#fcced1:Cameroon
+CA#ffffc0:Canada
+CL#c1ffe9:Chile
+CN#c0c0ff:China
+CO#c1daff:Colombia
+CR#cefcd3:Costa Rica
+HR#f1fec6:Croatia
+CU#e1fec2:Cuba
+CY#d0fdc3:Cyprus
+CZ#c5ffe5:Czech Republic
+KP#c5fdc3:Democratic People's Republic of Korea
+CD#c1e9ff:Democratic Republic of Congo
+DO#c2f9fe:Dominican Republic
+EC#c2fdec:Ecuador
+EG#dec5ff:Egypt
+SV#f7fec6:El Salvador
+ER#c6c6fe:Eritrea
+EE#d7ebfd:Estonia
+ET#e6fdc3:Ethiopia
+FJ#100001:Fiji
+FI#ffdfc5:Finland
+FR#e4fec2:France
+FG#cee9fc:French Guiana
+GA#dac1ff:Gabon
+GM#c5fffe:Gambia
+GE#fdc3c4:Georgia
+DE#ffddc5:Germany
+GH#c1d9ff:Ghana
+GR#fec2e3:Greece
+GL#ebfcce:Greenland
+GT#ced0fc:Guatemala
+GN#ebfdd3:Guinea
+GY#fcf9ce:Guyana
+HN#eecefc:Honduras
+HU#e3c6fe:Hungary
+IS#ffd1c5:Iceland
+IN#c1ffc8:India
+ID#ffeac1:Indonesia
+IE#c2ccfe:Ireland
+IR#f6fec2:Iran
+IL#c2fed1:Israel
+IT#c2c2fe:Italy
+CI#cefbfc:Ivory Coast
+JM#fff0a1:Jamaica
+JP#ffc5e8:Japan
+JO#c2fef0:Jordan
+KZ#ffe6c5:Kazakhstan
+KE#ced2fc:Kenya
+KW#eac6fe:Kuwait
+KG#ffc5dd:Kyrgyzstan
+LA#fdf7c3:Laos
+LV#c6fef6:Latvia
+LY#cafdc3:Libya
+MK#c3f0fd:Macedonia
+MG#e4ffc1:Madagascar
+MY#dfffc5:Malaysia
+ML#d3cefc:Mali
+MR#fdc3c5:Mauritania
+MX#c1edff:Mexico
+MD#c6f2fe:Moldova
+MN#c3dffd:Mongolia
+MA#c5d0ff:Morocco
+MZ#dfcefc:Mozambique
+NA#eeffa1:Namibia
+NL#c8c6fe:Netherlands
+NC#fed0c2:New Caledonia
+NZ#ceecfc:New Zealand
+NI#fcceee:Nicaragua
+NE#ffe4c5:Niger
+NG#dffcce:Nigeria
+NO#c1d7ff:Norway
+OM#c2e6fe:Oman
+PK#fec2f3:Pakistan
+PG#e1c3fd:Papua New Guinea
+PY#c9dafb:Paraguay
+PE#efffc1:Peru
+PH#dcc2fe:Philippines
+PL#ffc1e3:Poland
+PT#fde4c3:Portugal
+QA#d1c1ff:Qatar
+KR#c5fff4:Republic of Korea
+RO#d1c3fd:Romania
+RU#c0c0c0:Russia
+RW#fec6cd:Rwanda
+SA#c3fdeb:Saudi Arabia
+SN#fcf6ce:Senegal
+RS#c1ffc9:Serbia
+SL#fff2c5:Sierra Leone
+SK#fef1c6:Slovakia
+SI#fff6c5:Slovenia
+SO#fdf9c3:Somalia
+ZA#ffebbb:South Africa
+ES#c5f1ff:Spain
+LK#feffc1:Sri Lanka
+SD#c2fee6:Sudan
+SR#fcd1ce:Suriname
+SE#c5ffe2:Sweden
+CH#c6fefe:Switzerland
+SY#fec6cb:Syria
+TW#f4cbff:Taiwan
+TJ#d3fafd:Tajikistan
+TZ#f7fdc3:Tanzania
+TH#c3fdf8:Thailand
+TT#d7fdee:Trinidad and Tobago
+TN#fdc3dc:Tunisia
+TR#fdf7d3:Turkey
+TM#c5e2ff:Turkmenistan
+UA#d7ffc1:Ukraine
+AE#c3d1fd:United Arab Emirates
+GB#c1f4ff:United Kingdom
+US#ffC0ff:United States of America
+UG#fbc3fd:Uganda
+UY#cefcf3:Uruguay
+UZ#f0c5ff:Uzbekistan
+VE#d6c2fe:Venezuela
+VN#ffc5d5:Vietnam
+ZM#c3cdfd:Zambia
+ZW#c2fef4:Zimbabwe
+XX#FFFFEE:Outer space
+ZZ#FFFFFF:Oceans / Seas

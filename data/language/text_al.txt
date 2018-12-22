@@ -1,0 +1,128 @@
+sipas Emrit
+sipas Numrit Atomik
+sipas Datës së Zbulimit
+sipas Zbuluesit
+fjalor
+biografi
+website
+rreth
+regjistrim
+Kërko
+OK!
+Kthehu
+gjendja fizike e elementëve në kushte standarte
+i ngurtë
+i lëngët
+gaz
+sintetik
+energjik
+shfaq të gjitha
+pamja e tabelës
+Modeli i paraqitjes
+Kërko për ...
+Të gjitha fjalët kyçe
+Kreu
+Grafik
+Rrezja Atomike
+Struktura Atomike
+Rreze
+Struktura
+sipas pikës së Shkrirjes
+sipas pikës së Vëlimit
+lista e elementëve
+sipas Dendësisë
+sipas Rrezes Atomike
+sipas Fortësisë Brinell               (I can't translate - I am not sure)
+sipas Elektronegativitetit (Pauling)
+sipas përçueshmërisë elektrike
+sipas përçueshmërisë termike
+sipas bollëkut
+sipas Masës Atomike
+sipas Simbolit
+Zgjedhje
+Default page                          (I can't translate)
+Titulli i Dokumentit
+Gjërat kryesor
+Gjëra të tjera
+Izotopet
+Përbërje
+Spektri
+Reaksione
+Ngjarja
+Atomic MAC Data
+Atomic Reference
+Naming
+---- Default View ----
+Pika e Shkrirjes
+Pika e Vëlimit
+Rrezja Atomike
+Masa Atomike
+Dendësia
+Enthalpy e Bashkimit                 (I can't translate)
+Enthalpy e Avullimit                 (I can't translate)
+Kapaciteti i nxehtësisë
+Përçueshmëria Termike
+Shpërndarja termike
+Data e Zbulimit
+Pika e Shkrirjes
+Pika e Vëlimit
+Rrezja Atomike
+Masa Atomike
+Dendësia
+Enthalpy e Bashkimit                 (I can't translate)
+Enthalpy e Avullimit                 (I can't translate)
+Jonizimi sipas Elementit
+Kapaciteti i nxehtësisë
+Përçueshmëria Termike
+Ekspansioni Termik
+Përçueshmëria elektrike
+Elektronegativiteti
+Të gjitha (deri te 103)
+Metale Kalimtare
+Metale Alkalino-tokësorë
+Halogjene
+Jometale
+Metale
+Gaze të plogta                      (synonim = gaze inerte)
+Metale Alkalinë
+Metaloide
+Lantanide
+Aktinide
+* Custom                            (I can't translate)
+-- choose --
+Pika e Shkrirjes
+Pika e Vëlimit
+Rrezja Atomike
+Masa Atomike
+Dendësia
+Enthalpy of Fusion		    (I can't translate)
+Enthalpy of Vaporisation	    (I can't translate)
+Kapaciteti i nxehtësisë
+Përçueshmëria Termike
+Shpërndarja termike
+Rrezja Atomike
+Rrezja Atomike (Bori)
+Rreze Kovalente
+Van De Vals
+sipas Vëllimit Atomik
+sipas vendit të zbulimit
+by Enthalpy of Fusion		    (I can't translate)
+Spektri përthithës
+Spekti shpërhapës
+Ngjarja
+Block
+Ngjyra
+Grafik
+Të dyja
+I kryehershëm
+Sintetik
+nga rrënimi
+s-block
+p-block
+d-block
+f-block
+Litofil                             (I can't translate)
+Siderofil                           (I can't translate)
+Kalkofil                            (I can't translate)
+Atmofil                             (I can't translate)
+Shumë rrallë                        (I can't translate - I am not sure)
