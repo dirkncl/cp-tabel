@@ -1,4 +1,4 @@
-# cp-tabel
+# cp-tabel (classic periodic table)
 ## Experiment only with chrome browser
 
 - Ptable is the Classical Periodic Table for PC by Paul Alan Freshney [(c) Paul Alan Freshney 2004-2009].
