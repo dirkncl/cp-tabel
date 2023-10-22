@@ -1,4 +1,4 @@
-# Ptabel
+# cp-tabel
 ## Experiment only with chrome browser
 
 Ptable is the Classic Periodic Table for PC by Paul Alan Freshney [(c) Paul Alan Freshney 2004-2009] which is partly implemented for the web.
