@@ -1,4 +1,4 @@
-# Ptabel
+# cp-tabel
 ## Experiment only with chrome browser
 
 - Ptable is the Classical Periodic Table for PC by Paul Alan Freshney [(c) Paul Alan Freshney 2004-2009].
@@ -7,4 +7,4 @@
 - Almost all html page material and images are original copies of the classic periodic table for PC (Ptable) from PA. Freshney.
 
 
-[![Screenshot](https://github.com/dirkncl/Ptable/blob/gh-pages/screenshot.png)](https://dirkncl.github.io/Ptable/Mainpt.htm)
+[![Screenshot](https://github.com/dirkncl/cp-tabel/blob/gh-pages/screenshot.png)](https://dirkncl.github.io/cp-tabel/Mainpt.htm)
